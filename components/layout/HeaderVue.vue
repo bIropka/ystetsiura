@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <h1>hello, about page</h1>
+  <header>Header</header>
 </template>
 
 <style scoped lang="css"></style>
