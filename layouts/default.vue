@@ -5,13 +5,13 @@ import Content from '~/components/layout/ContentVue.vue'
 </script>
 
 <template>
-  <main>
+  <body class="bg-dark">
     <Header />
     <Navigation />
     <Content>
       <slot />
     </Content>
-  </main>
+  </body>
 </template>
 
 <style scoped lang="css"></style>
