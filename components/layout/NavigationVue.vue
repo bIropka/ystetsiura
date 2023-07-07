@@ -14,7 +14,7 @@ const links: LinkType[] = [
 </script>
 
 <template>
-  <nav>
+  <nav class="block w-40 bg-surface">
     <ul>
       <li v-for="link in links" :key="link.path">
         <NuxtLink :to="link.path">
