@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PageTitle } from '~/components/common'
+</script>
 
 <template>
-  <h1>works</h1>
+  <PageTitle text="Portfolio" />
 </template>
 
 <style scoped lang="css"></style>

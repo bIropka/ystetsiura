@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { PageTitle } from '~/components/common'
+</script>
 
-<template><h1>contact</h1></template>
+<template><PageTitle text="Contact" /></template>
 
 <style scoped lang="css"></style>

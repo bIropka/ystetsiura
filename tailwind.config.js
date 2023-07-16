@@ -1,5 +1,3 @@
-const { iconsPlugin, getIconCollections } = require('@egoist/tailwindcss-icons')
-
 module.exports = {
   content: [
     './components/**/*.{js,vue,ts}',
@@ -10,14 +8,16 @@ module.exports = {
     './nuxt.config.{js,ts}',
     './app.vue',
   ],
-  plugins: [
-    iconsPlugin({
-      // Select the icon collections you want to use
-      collections: getIconCollections(['mdi', 'lucide']),
-    }),
-  ],
+  plugins: [],
   theme: {
+    fontFamily: {
+      pregular: ['Poppins Regular', 'sans-serif'],
+      pmedium: ['Poppins Medium', 'sans-serif'],
+      pbold: ['Poppins Bold', 'sans-serif'],
+    },
     colors: {
+      'grad-start': '#0DA2FF',
+      'grad-stop': '#05F',
       accent: '#0D86FF',
       body: '#AEB0B8',
       br: '#33363D',
@@ -27,6 +27,12 @@ module.exports = {
       orange: '#FF965D',
       overlay: '#2E2F36',
       surface: '#23262B',
+    },
+    gridTemplateRows: {
+      default: 'auto 1fr',
+    },
+    boxShadow: {
+      nav: '-4px -4px 5px 0px rgba(0, 0, 0, 0.20) inset, 4px 4px 5px 0px rgba(255, 255, 255, 0.23) inset',
     },
   },
 }
