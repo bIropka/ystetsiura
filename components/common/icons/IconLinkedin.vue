@@ -8,12 +8,49 @@ defineProps({
 </script>
 
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24">
-    <g fill="none" :stroke="color" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 256 256"
+    xml:space="preserve"
+  >
+    <defs></defs>
+    <g
+      stroke="none"
+      stroke-width="0"
+      stroke-dasharray="none"
+      stroke-linecap="butt"
+      stroke-linejoin="miter"
+      stroke-miterlimit="10"
+      fill="none"
+      fill-rule="nonzero"
+      transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"
+    >
       <path
-        d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"
+        d="M 1.48 29.91 h 18.657 v 60.01 H 1.48 V 29.91 z M 10.809 0.08 c 5.963 0 10.809 4.846 10.809 10.819 c 0 5.967 -4.846 10.813 -10.809 10.813 C 4.832 21.712 0 16.866 0 10.899 C 0 4.926 4.832 0.08 10.809 0.08"
+        stroke="none"
+        stroke-width="1"
+        stroke-dasharray="none"
+        stroke-linejoin="miter"
+        stroke-miterlimit="10"
+        :fill="color"
+        fill-rule="nonzero"
+        transform=" matrix(1 0 0 1 0 0) "
+        stroke-linecap="round"
       />
-      <circle cx="4" cy="4" r="2" />
+      <path
+        d="M 31.835 29.91 h 17.89 v 8.206 h 0.255 c 2.49 -4.72 8.576 -9.692 17.647 -9.692 C 86.514 28.424 90 40.849 90 57.007 V 89.92 H 71.357 V 60.737 c 0 -6.961 -0.121 -15.912 -9.692 -15.912 c -9.706 0 -11.187 7.587 -11.187 15.412 V 89.92 H 31.835 V 29.91 z"
+        stroke="none"
+        stroke-width="1"
+        stroke-dasharray="none"
+        stroke-linejoin="miter"
+        stroke-miterlimit="10"
+        :fill="color"
+        fill-rule="nonzero"
+        transform="matrix(1 0 0 1 0 0)"
+        stroke-linecap="round"
+      />
     </g>
   </svg>
 </template>
