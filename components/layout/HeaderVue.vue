@@ -65,7 +65,7 @@ const contacts = [
       <span class="text-body text-sm">Programmer</span>
       <ul class="flex items-center mt-2">
         <li v-for="link in links" :key="link.url" class="mx-1">
-          <a :href="link.url" :title="link.title">
+          <a :href="link.url" :title="link.title" target="_blank">
             <component :is="link.icon" color="#93959C" />
           </a>
         </li>
