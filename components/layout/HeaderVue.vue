@@ -1,10 +1,31 @@
 <script setup lang="ts">
-import IconLinkedin from '~/components/common/icons/IconLinkedin.vue'
+import {
+  IconCodersRank,
+  IconGitHub,
+  IconLinkedin,
+  IconHackersRank,
+} from '~/components/common/icons'
 
 const links = [
   {
+    title: 'LinkedIn',
     icon: IconLinkedin,
-    url: '#1',
+    url: 'https://www.linkedin.com/in/yegor-stetsiura/',
+  },
+  {
+    title: 'GitHub',
+    icon: IconGitHub,
+    url: 'https://github.com/bIropka',
+  },
+  {
+    title: 'CodersRank',
+    icon: IconCodersRank,
+    url: 'https://profile.codersrank.io/user/biropka',
+  },
+  {
+    title: 'HackerRank',
+    icon: IconHackersRank,
+    url: 'https://www.hackerrank.com/biropka',
   },
 ]
 
@@ -29,7 +50,7 @@ const contacts = [
 </script>
 
 <template>
-  <header class="flex bg-surface w-full p-7 col-span-6 rounded-3xl relative -mt-24">
+  <header class="flex bg-surface w-full p-5 col-span-6 rounded-3xl relative -mt-24">
     <div class="w-1/2 pr-7 pl-40 border-br border-solid border-r">
       <div
         class="w-36 h-36 rounded-[32px] overflow-hidden border-[6px] border-surface absolute left-7 -top-7"
@@ -40,20 +61,20 @@ const contacts = [
           alt="Yegor Stetsiura"
         />
       </div>
-      <h2 class="text-2xl font-pmedium">Yegor Stetsiura</h2>
-      <span class="text-body">Programmer</span>
-      <ul>
-        <li v-for="link in links" :key="link.url">
-          <a :href="link.url">
-            <component :is="link.icon" />
+      <h2 class="text-2xl font-pmedium text-heading">Yegor Stetsiura</h2>
+      <span class="text-body text-sm">Programmer</span>
+      <ul class="flex items-center mt-2">
+        <li v-for="link in links" :key="link.url" class="mx-1">
+          <a :href="link.url" :title="link.title">
+            <component :is="link.icon" color="#93959C" />
           </a>
         </li>
       </ul>
     </div>
     <div class="w-1/2 grid grid-cols-2 pl-7">
-      <div v-for="contact in contacts" :key="contact.label">
-        <div>{{ contact.label }}</div>
-        <div>{{ contact.value }}</div>
+      <div v-for="contact in contacts" :key="contact.label" class="my-2">
+        <div class="font-pmedium text-xs uppercase text-body">{{ contact.label }}</div>
+        <div class="text-sm text-heading mt-1">{{ contact.value }}</div>
       </div>
     </div>
   </header>

@@ -27,7 +27,7 @@ const route = useRoute()
           <component :is="link.icon" :color="route.path === link.path ? '#fff' : '#AEB0B8'" />
           <span
             :class="[route.path === link.path ? 'text-white' : 'text-body']"
-            class="uppercase mt-1"
+            class="uppercase mt-1 text-sm"
             >{{ link.title }}</span
           >
         </NuxtLink>
