@@ -11,7 +11,7 @@ import { HeaderVue, NavigationVue, ContentVue } from '~/components/layout'
         alt="Yegor Stetsiura personal website"
       />
     </div>
-    <div class="grid grid-cols-6 w-full max-w-5xl mx-auto gap-8 grow grid-rows-default">
+    <div class="grid grid-cols-6 w-full max-w-5xl mx-auto gap-8 grow grid-rows-default pb-8">
       <HeaderVue />
       <NavigationVue />
       <ContentVue>
