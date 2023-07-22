@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div>
-    <h3>{{ text }}</h3>
+    <h3 class="font-pbold text-2xl mb-6 text-heading">{{ text }}</h3>
   </div>
 </template>
 

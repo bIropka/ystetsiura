@@ -1,5 +1,9 @@
 * {
-    @apply text-heading font-pregular;
+    @apply font-pregular;
+}
+
+p {
+    @apply text-body my-4;
 }
 
 @font-face {

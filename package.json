@@ -28,5 +28,7 @@
     "prettier": "^2.8.8",
     "typescript": "^5.1.6"
   },
-  "dependencies": {}
+  "dependencies": {
+    "swiper": "^10.0.4"
+  }
 }

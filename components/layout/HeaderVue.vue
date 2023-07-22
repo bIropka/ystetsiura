@@ -63,10 +63,10 @@ const contacts = [
       </div>
       <h2 class="text-2xl font-pmedium text-heading">Yegor Stetsiura</h2>
       <span class="text-body text-sm">Programmer</span>
-      <ul class="flex items-center mt-2">
+      <ul class="flex items-center mt-3">
         <li v-for="link in links" :key="link.url" class="mx-1">
-          <a :href="link.url" :title="link.title">
-            <component :is="link.icon" color="#93959C" />
+          <a :href="link.url" :title="link.title" class="text-body hover:text-accent">
+            <component :is="link.icon" />
           </a>
         </li>
       </ul>

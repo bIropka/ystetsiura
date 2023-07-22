@@ -1,11 +1,4 @@
-<script setup lang="ts">
-defineProps({
-  color: {
-    type: String,
-    default: '#000',
-  },
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <svg
@@ -34,7 +27,7 @@ defineProps({
         stroke-dasharray="none"
         stroke-linejoin="miter"
         stroke-miterlimit="10"
-        :fill="color"
+        fill="currentColor"
         fill-rule="nonzero"
         transform=" matrix(1 0 0 1 0 0) "
         stroke-linecap="round"
@@ -46,7 +39,7 @@ defineProps({
         stroke-dasharray="none"
         stroke-linejoin="miter"
         stroke-miterlimit="10"
-        :fill="color"
+        fill="currentColor"
         fill-rule="nonzero"
         transform="matrix(1 0 0 1 0 0)"
         stroke-linecap="round"
