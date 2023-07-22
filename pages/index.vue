@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle'
-import { PageTitle, SectionTitle } from '~/components/common'
 import { IconBlog } from '~/components/common/icons'
+import { AboutSection, ServicesSection } from '~/components/sections'
 
 const services = [
   {
@@ -36,44 +36,8 @@ register()
 
 <template>
   <div>
-    <article>
-      <PageTitle text="About Me" />
-      <p>
-        I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development
-        and print media. I enjoy turning complex problems into simple, beautiful and intuitive
-        designs.
-      </p>
-      <p>
-        My job is to build your website so that it is functional and user-friendly but at the same
-        time attractive. Moreover, I add personal touch to your product and make sure that is
-        eye-catching and easy to use. My aim is to bring across your message and identity in the
-        most creative way. I created web design for many famous brand companies.
-      </p>
-    </article>
-    <section class="mt-12">
-      <SectionTitle text="What I'm Doing" />
-      <div class="grid grid-cols-2 gap-7">
-        <div
-          v-for="s in services"
-          :key="s.title"
-          class="border-2 border-br rounded-2xl p-7 text-center"
-        >
-          <div class="text-accent flex justify-center">
-            <component :is="s.icon" />
-          </div>
-          <h4 class="text-lg text-heading mt-1 mb-2">{{ s.title }}</h4>
-          <div class="text-body">{{ s.text }}</div>
-        </div>
-      </div>
-    </section>
-    <section class="mt-12">
-      <SectionTitle text="Testimonials" />
-      <swiper-container>
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-      </swiper-container>
-    </section>
+    <AboutSection />
+    <ServicesSection :services="services" />
   </div>
 </template>
 
