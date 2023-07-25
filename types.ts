@@ -1,3 +1,10 @@
+export enum ExpLevel {
+  BEGINNER = 'Beginner',
+  MEDIUM = 'Medium',
+  ADVANCED = 'Advanced',
+  EXPERT = 'Expert',
+}
+
 export type ServiceType = {
   icon: any
   title: string
@@ -12,5 +19,5 @@ export type ExpItem = {
 
 export type SkillItem = {
   title: string
-  value: string
+  value: ExpLevel
 }

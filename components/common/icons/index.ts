@@ -2,6 +2,8 @@ import IconAbout from './IconAbout.vue'
 import IconBlog from './IconBlog.vue'
 import IconCodersRank from './IconCodersRank.vue'
 import IconContact from './IconContact.vue'
+import IconEducation from './IconEducation.vue'
+import IconExperience from './IconExperience.vue'
 import IconGitHub from './IconGitHub.vue'
 import IconHackersRank from './IconHackersRank.vue'
 import IconWorks from './IconWorks.vue'
@@ -14,6 +16,8 @@ export {
   IconBlog,
   IconCodersRank,
   IconContact,
+  IconEducation,
+  IconExperience,
   IconGitHub,
   IconHackersRank,
   IconWorks,

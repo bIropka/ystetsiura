@@ -1,15 +1,16 @@
 <script setup lang="ts">
-defineProps({
-  text: {
-    type: String,
-    default: 'The Section Title',
-  },
-})
+import type { Component } from 'vue'
+
+defineProps<{
+  text: String
+  icon?: Component
+}>()
 </script>
 
 <template>
-  <div>
-    <h3 class="font-pbold text-2xl mb-6 text-heading">{{ text }}</h3>
+  <div class="flex items-center mb-6">
+    <component :is="icon" v-if="icon" class="mr-3" />
+    <h3 class="font-pbold text-2xl text-heading">{{ text }}</h3>
   </div>
 </template>
 

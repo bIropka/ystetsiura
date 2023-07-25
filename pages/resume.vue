@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { PageTitle } from '~/components/common'
 import { EducationSection } from '~/components/sections'
-import { ExpItem, SkillItem } from '~/types'
+import { ExpItem, ExpLevel, SkillItem } from '~/types'
 import SkillsSection from '~/components/sections/SkillsSection.vue'
+import { IconEducation, IconExperience } from '~/components/common/icons'
 
 const education: ExpItem[] = [
   {
@@ -24,19 +25,19 @@ const education: ExpItem[] = [
 const skills: SkillItem[] = [
   {
     title: 'Web Design',
-    value: '80',
+    value: ExpLevel.ADVANCED,
   },
   {
     title: 'Graphic Design',
-    value: '75',
+    value: ExpLevel.MEDIUM,
   },
   {
     title: 'Photoshop',
-    value: '90',
+    value: ExpLevel.EXPERT,
   },
   {
     title: 'Illustrator',
-    value: '50',
+    value: ExpLevel.BEGINNER,
   },
 ]
 </script>
@@ -44,8 +45,8 @@ const skills: SkillItem[] = [
 <template>
   <div>
     <PageTitle text="Resume" />
-    <EducationSection title="Education" :content="education" />
-    <EducationSection title="Experience" :content="education" />
+    <EducationSection title="Education" :content="education" :icon="IconEducation" />
+    <EducationSection title="Experience" :content="education" :icon="IconExperience" />
     <SkillsSection :content="skills" />
   </div>
 </template>
