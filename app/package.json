@@ -8,8 +8,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "yarn lint:js && yarn lint:prettier",
-    "lint:prettier": "prettier --check .",
-    "lint:fix": "prettier --write --list-different . && yarn lint:js --fix"
+    "lint:prettier": "prettier --check ..",
+    "lint:fix": "prettier --write --list-different .. && yarn lint:js --fix"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

@@ -8,18 +8,18 @@ p {
 
 @font-face {
     font-family: 'Poppins';
-    src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    src: url('assetslar.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins Medium';
-    src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+    src: url('assetsum.ttf') format('truetype');
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Poppins Bold';
-    src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+    src: url('assetsBold.ttf') format('truetype');
     font-display: swap;
 }
