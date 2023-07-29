@@ -11,5 +11,15 @@ export default defineType({
       type: 'string',
       validation: (Rule: StringRule) => Rule.required(),
     }),
+    defineField({
+      name: 'edu',
+      title: 'Education',
+      type: 'educationList',
+    }),
+    defineField({
+      name: 'exp',
+      title: 'Experience',
+      type: 'experienceList',
+    }),
   ],
 })

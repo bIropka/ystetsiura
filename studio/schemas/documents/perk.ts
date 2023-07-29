@@ -1,8 +1,8 @@
-import { defineField, defineType, StringRule } from 'sanity'
+import { defineField, defineType, ImageRule, StringRule } from 'sanity'
 
 export default defineType({
-  name: 'service',
-  title: 'Service',
+  name: 'perk',
+  title: 'Perk',
   type: 'document',
   fields: [
     defineField({
@@ -21,10 +21,10 @@ export default defineType({
       validation: (Rule: StringRule) => Rule.required(),
     }),
     defineField({
-      name: 'text',
-      title: 'Text',
-      type: 'text',
-      validation: (Rule: StringRule) => Rule.required(),
+      name: 'level',
+      title: 'Level',
+      type: 'number',
+      validation: (Rule) => Rule.required().min(0).max(100),
     }),
   ],
   preview: {

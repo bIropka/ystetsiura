@@ -21,5 +21,10 @@ export default defineType({
       title: 'Testimonials',
       type: 'testimonialsList',
     }),
+    defineField({
+      name: 'clients',
+      title: 'Clients',
+      type: 'clientsList',
+    }),
   ],
 })
