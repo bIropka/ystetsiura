@@ -14,17 +14,20 @@ export default defineType({
     defineField({
       name: 'services',
       title: 'Services',
-      type: 'servicesList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'service' } }],
     }),
     defineField({
       name: 'testimonials',
       title: 'Testimonials',
-      type: 'testimonialsList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'testimonial' } }],
     }),
     defineField({
       name: 'clients',
       title: 'Clients',
-      type: 'clientsList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'client' } }],
     }),
   ],
 })

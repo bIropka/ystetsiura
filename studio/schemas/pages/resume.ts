@@ -14,12 +14,14 @@ export default defineType({
     defineField({
       name: 'edu',
       title: 'Education',
-      type: 'educationList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'educationItem' } }],
     }),
     defineField({
       name: 'exp',
       title: 'Experience',
-      type: 'experienceList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'experienceItem' } }],
     }),
   ],
 })

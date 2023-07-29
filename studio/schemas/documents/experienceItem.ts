@@ -43,7 +43,8 @@ export default defineType({
     defineField({
       name: 'perks',
       title: 'Perks',
-      type: 'perksList',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'perk' } }],
     }),
   ],
   preview: {

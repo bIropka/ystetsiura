@@ -13,16 +13,12 @@ import experienceItem from './documents/experienceItem'
 import perk from './documents/perk'
 import personalData from './documents/personalData'
 import post from './documents/post'
+import project from './documents/project'
+import projectCategory from './documents/projectCategory'
 import service from './documents/service'
 import testimonial from './documents/testimonial'
 /* objects */
 import blockContent from './objects/blockContent'
-import clientsList from './objects/clientsList'
-import educationList from './objects/educationList'
-import experienceList from './objects/experienceList'
-import perksList from './objects/perksList'
-import servicesList from './objects/servicesList'
-import testimonialsList from './objects/testimonialsList'
 
 export const schemaTypes = [
   /* pages */
@@ -40,14 +36,10 @@ export const schemaTypes = [
   perk,
   personalData,
   post,
+  project,
+  projectCategory,
   service,
   testimonial,
   /* objects */
   blockContent,
-  clientsList,
-  educationList,
-  experienceList,
-  perksList,
-  servicesList,
-  testimonialsList,
 ]

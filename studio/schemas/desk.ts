@@ -25,6 +25,8 @@ const structure = (S: StructureBuilder) =>
       S.listItem().title('Authors').child(S.documentTypeList('author')),
       S.listItem().title('Categories').child(S.documentTypeList('category')),
       S.divider(),
+      S.listItem().title('Projects').child(S.documentTypeList('project')),
+      S.divider(),
     ])
 
 export default structure
