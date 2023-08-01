@@ -8,5 +8,8 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxtjs/sanity', '@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
+  sanity: {
+    projectId: process.env.SANITY_STUDIO_PROJECT_ID ?? '',
+  },
 })

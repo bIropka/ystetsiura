@@ -12,17 +12,17 @@ export default defineConfig({
   name: 'default',
   title: 'ystetsiura',
 
-  projectId: '0xmdj6su',
-  dataset: 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID ?? '',
+  dataset: process.env.SANITY_STUDIO_DATASET ?? '',
 
   plugins: [
     iconPicker(),
     codeInput(),
     colorInput(),
     visionTool(),
-    /*googleMapsInput({
-      apiKey: '',
-    }),*/
+    googleMapsInput({
+      apiKey: process.env.SANITY_STUDIO_GOOGLE_MAPS_API_KEY ?? '',
+    }),
     deskTool({ structure }),
   ],
 
