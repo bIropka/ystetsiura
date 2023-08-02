@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Component } from 'vue/dist/vue'
 import { SectionTitle } from '~/components/common'
-import { ExpItem } from '~/types'
+import { ExpItemType } from '~/types'
 
-defineProps<{ title: String; content: ExpItem[]; icon?: Component }>()
+defineProps<{ title: String; content: ExpItemType[]; icon?: Component }>()
 </script>
 
 <template>

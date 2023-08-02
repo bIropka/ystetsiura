@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
-    "@nuxtjs/sanity": "^1.8.0",
+    "@sanity/client": "^6.2.0",
     "swiper": "^10.0.4"
   }
 }

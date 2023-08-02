@@ -5,6 +5,11 @@ import {
   IconLinkedin,
   IconHackersRank,
 } from '~/components/common/icons'
+import { getPersonalData } from '~/api/queries'
+import { PersonalDataType } from '~/types'
+
+const { firstName, lastName, position, email, birthday, location, phone } =
+  useAsyncData<PersonalDataType>('personal-data', getPersonalData)?.data?.value ?? {}
 
 const links = [
   {
@@ -28,25 +33,6 @@ const links = [
     url: 'https://www.hackerrank.com/biropka',
   },
 ]
-
-const contacts = [
-  {
-    label: 'Email',
-    value: 'ronald@example.com',
-  },
-  {
-    label: 'Birthday',
-    value: '17 March, 1995',
-  },
-  {
-    label: 'Phone',
-    value: '+1 (070) 123–8459',
-  },
-  {
-    label: 'Location',
-    value: 'San-Francisco, USA',
-  },
-]
 </script>
 
 <template>
@@ -61,8 +47,10 @@ const contacts = [
           alt="Yegor Stetsiura"
         />
       </div>
-      <h2 class="text-2xl font-pmedium text-heading">Yegor Stetsiura</h2>
-      <span class="text-body text-sm">Programmer</span>
+      <h2 v-if="firstName && lastName" class="text-2xl font-pmedium text-heading">
+        {{ firstName }} {{ lastName }}
+      </h2>
+      <span v-if="position" class="text-body text-sm">{{ position }}</span>
       <ul class="flex items-center mt-3">
         <li v-for="link in links" :key="link.url" class="mx-1">
           <a
@@ -77,9 +65,21 @@ const contacts = [
       </ul>
     </div>
     <div class="w-1/2 grid grid-cols-2 pl-7">
-      <div v-for="contact in contacts" :key="contact.label" class="my-2">
-        <div class="font-pmedium text-xs uppercase text-body">{{ contact.label }}</div>
-        <div class="text-sm text-heading mt-1">{{ contact.value }}</div>
+      <div class="my-2">
+        <div class="font-pmedium text-xs uppercase text-body">email</div>
+        <div class="text-sm text-heading mt-1">{{ email }}</div>
+      </div>
+      <div class="my-2">
+        <div class="font-pmedium text-xs uppercase text-body">Birthday</div>
+        <div class="text-sm text-heading mt-1">{{ birthday }}</div>
+      </div>
+      <div class="my-2">
+        <div class="font-pmedium text-xs uppercase text-body">Phone</div>
+        <div class="text-sm text-heading mt-1">{{ phone }}</div>
+      </div>
+      <div class="my-2">
+        <div class="font-pmedium text-xs uppercase text-body">Location</div>
+        <div class="text-sm text-heading mt-1">{{ location }}</div>
       </div>
     </div>
   </header>

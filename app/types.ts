@@ -11,7 +11,7 @@ export type ServiceType = {
   text: string
 }
 
-export type ExpItem = {
+export type ExpItemType = {
   title: string
   date: string
   text: string
@@ -20,4 +20,16 @@ export type ExpItem = {
 export type SkillItem = {
   title: string
   value: ExpLevel
+}
+
+export type PersonalDataType = {
+  firstName: string
+  lastName: string
+  bio: any
+  birthday: string
+  email: string
+  location: string
+  phone: string
+  photo: any
+  position: string
 }

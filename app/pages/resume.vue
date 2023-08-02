@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { PageTitle } from '~/components/common'
 import { EducationSection } from '~/components/sections'
-import { ExpItem, ExpLevel, SkillItem } from '~/types'
+import { ExpItemType, ExpLevel, SkillItem } from '~/types'
 import SkillsSection from '~/components/sections/SkillsSection.vue'
 import { IconEducation, IconExperience } from '~/components/common/icons'
 
-const education: ExpItem[] = [
+const education: ExpItemType[] = [
   {
     title: 'University School of the Arts',
     date: '2015 — Present',
