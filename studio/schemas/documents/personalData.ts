@@ -33,6 +33,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'socialList',
+      title: 'Social list',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'social' } }],
+    }),
+    defineField({
       name: 'email',
       title: 'Email',
       type: 'string',

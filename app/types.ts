@@ -22,6 +22,11 @@ export type SkillItem = {
   value: ExpLevel
 }
 
+export type SocialType = {
+  title: string
+  url: string
+}
+
 export type PersonalDataType = {
   firstName: string
   lastName: string
@@ -30,6 +35,7 @@ export type PersonalDataType = {
   email: string
   location: string
   phone: string
-  photo: any
+  photo: string
   position: string
+  socialList: SocialType[]
 }

@@ -1,50 +1,28 @@
 <script setup lang="ts">
-import {
-  IconCodersRank,
-  IconGitHub,
-  IconLinkedin,
-  IconHackersRank,
-} from '~/components/common/icons'
+import { onMounted } from 'vue'
 import { getPersonalData } from '~/api/queries'
 import { PersonalDataType } from '~/types'
+import SanityIcon from '~/components/common/SanityIcon.vue'
 
-const { firstName, lastName, position, email, birthday, location, phone } =
+const { firstName, lastName, position, email, birthday, location, phone, photo, socialList } =
   useAsyncData<PersonalDataType>('personal-data', getPersonalData)?.data?.value ?? {}
 
-const links = [
-  {
-    title: 'LinkedIn',
-    icon: IconLinkedin,
-    url: 'https://www.linkedin.com/in/yegor-stetsiura/',
-  },
-  {
-    title: 'GitHub',
-    icon: IconGitHub,
-    url: 'https://github.com/bIropka',
-  },
-  {
-    title: 'CodersRank',
-    icon: IconCodersRank,
-    url: 'https://profile.codersrank.io/user/biropka',
-  },
-  {
-    title: 'HackerRank',
-    icon: IconHackersRank,
-    url: 'https://www.hackerrank.com/biropka',
-  },
-]
+onMounted(() => {
+  console.log(socialList)
+})
 </script>
 
 <template>
   <header class="flex bg-surface w-full p-5 col-span-6 rounded-3xl relative -mt-24">
     <div class="w-1/2 pr-7 pl-40 border-br border-solid border-r">
       <div
+        v-if="photo"
         class="w-36 h-36 rounded-[32px] overflow-hidden border-[6px] border-surface absolute left-7 -top-7"
       >
         <img
           class="w-full h-full object-cover object-top"
-          src="/images/Yegor_Stetsiura.jpg"
-          alt="Yegor Stetsiura"
+          :src="photo"
+          :alt="firstName + ' ' + lastName"
         />
       </div>
       <h2 v-if="firstName && lastName" class="text-2xl font-pmedium text-heading">
@@ -52,14 +30,14 @@ const links = [
       </h2>
       <span v-if="position" class="text-body text-sm">{{ position }}</span>
       <ul class="flex items-center mt-3">
-        <li v-for="link in links" :key="link.url" class="mx-1">
+        <li v-for="link in socialList" :key="link.url" class="mx-1">
           <a
             :href="link.url"
             :title="link.title"
             target="_blank"
             class="text-body hover:text-accent"
           >
-            <component :is="link.icon" />
+            <SanityIcon :type="link.title" />
           </a>
         </li>
       </ul>

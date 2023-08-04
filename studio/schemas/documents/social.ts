@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'perk',
-  title: 'Perk',
+  name: 'social',
+  title: 'Social',
   type: 'document',
   fields: [
     defineField({
@@ -12,10 +12,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'level',
-      title: 'Level',
-      type: 'number',
-      validation: (Rule) => Rule.required().min(0).max(100),
+      name: 'url',
+      title: 'Url',
+      type: 'url',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

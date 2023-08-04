@@ -1,4 +1,4 @@
-import { defineField, defineType, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'service',
@@ -6,25 +6,16 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'icon',
-      title: 'Icon',
-      type: 'iconPicker',
-      options: {
-        providers: ['f7', 'fa', 'mdi', 'sa', 'hi', 'fi', 'si'],
-        validation: (Rule: StringRule) => Rule.required(),
-      },
-    }),
-    defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'text',
       title: 'Text',
       type: 'text',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

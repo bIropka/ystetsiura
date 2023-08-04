@@ -16,6 +16,7 @@ import post from './documents/post'
 import project from './documents/project'
 import projectCategory from './documents/projectCategory'
 import service from './documents/service'
+import social from './documents/social'
 import testimonial from './documents/testimonial'
 /* objects */
 import blockContent from './objects/blockContent'
@@ -39,6 +40,7 @@ export const schemaTypes = [
   project,
   projectCategory,
   service,
+  social,
   testimonial,
   /* objects */
   blockContent,
