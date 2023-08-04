@@ -1,15 +1,10 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
 import { getPersonalData } from '~/api/queries'
 import { PersonalDataType } from '~/types'
-import SanityIcon from '~/components/common/SanityIcon.vue'
+import SocialIcon from '~/components/common/SocialIcon.vue'
 
 const { firstName, lastName, position, email, birthday, location, phone, photo, socialList } =
   useAsyncData<PersonalDataType>('personal-data', getPersonalData)?.data?.value ?? {}
-
-onMounted(() => {
-  console.log(socialList)
-})
 </script>
 
 <template>
@@ -37,7 +32,7 @@ onMounted(() => {
             target="_blank"
             class="text-body hover:text-accent"
           >
-            <SanityIcon :type="link.title" />
+            <SocialIcon :type="link.title" />
           </a>
         </li>
       </ul>
