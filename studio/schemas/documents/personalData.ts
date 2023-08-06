@@ -6,7 +6,7 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'photo',
+      name: 'image',
       title: 'Photo',
       type: 'image',
       options: {
@@ -63,12 +63,6 @@ export default defineType({
       name: 'location',
       title: 'Location',
       type: 'string',
-      validation: (Rule) => Rule.required(),
-    }),
-    defineField({
-      name: 'bio',
-      title: 'Bio',
-      type: 'blockContent',
       validation: (Rule) => Rule.required(),
     }),
   ],

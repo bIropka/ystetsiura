@@ -12,6 +12,12 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'bio',
+      title: 'Bio',
+      type: 'blockContent',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'services',
       title: 'Services',
       type: 'array',

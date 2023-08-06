@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getPersonalData } from '~/api/queries'
 import SocialIcon from '~/components/common/SocialIcon.vue'
+import sanityInageBuilder from '~/api/sanity-inage-builder'
 
 const { data } = useAsyncData('personal-data', getPersonalData)
 </script>
@@ -9,12 +10,12 @@ const { data } = useAsyncData('personal-data', getPersonalData)
   <header v-if="data" class="flex bg-surface w-full p-5 col-span-6 rounded-3xl relative -mt-24">
     <div class="w-1/2 pr-7 pl-40 border-br border-solid border-r">
       <div
-        v-if="data.photo"
+        v-if="data.image"
         class="w-36 h-36 rounded-[32px] overflow-hidden border-[6px] border-surface absolute left-7 -top-7"
       >
         <img
           class="w-full h-full object-cover object-top"
-          :src="data.photo"
+          :src="sanityInageBuilder(data.image).url()"
           :alt="data.firstName + ' ' + data.lastName"
         />
       </div>

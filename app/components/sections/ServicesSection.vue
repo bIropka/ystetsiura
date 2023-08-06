@@ -3,7 +3,7 @@ import { SectionTitle } from '~/components/common'
 import type { ServiceType } from '~/types'
 
 defineProps<{
-  services: ServiceType[]
+  list: ServiceType[]
 }>()
 </script>
 
@@ -11,16 +11,9 @@ defineProps<{
   <section class="mb-12">
     <SectionTitle text="What I'm Doing" />
     <div class="grid grid-cols-2 gap-7">
-      <div
-        v-for="s in services"
-        :key="s.title"
-        class="border-2 border-br rounded-2xl p-7 text-center"
-      >
-        <div class="text-accent flex justify-center">
-          <component :is="s.icon" />
-        </div>
-        <h4 class="text-lg text-heading mt-1 mb-2">{{ s.title }}</h4>
-        <div class="text-body">{{ s.text }}</div>
+      <div v-for="s in list" :key="s.title" class="border-2 border-br rounded-2xl p-7 text-center">
+        <h4 v-if="s.title" class="text-lg text-heading mt-1 mb-2">{{ s.title }}</h4>
+        <div v-if="s.text" class="text-body">{{ s.text }}</div>
       </div>
     </div>
   </section>

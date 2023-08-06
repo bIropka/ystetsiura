@@ -15,7 +15,6 @@ export default defineType({
       name: 'text',
       title: 'Text',
       type: 'text',
-      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

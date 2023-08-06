@@ -25,6 +25,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      name: 'project',
+      title: 'Project',
+      type: 'string',
+    }),
+    defineField({
+      name: 'url',
+      title: 'URL',
+      type: 'url',
+    }),
+    defineField({
       name: 'position',
       title: 'Position',
       type: 'string',

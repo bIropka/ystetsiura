@@ -1,43 +1,15 @@
 <script setup lang="ts">
-import { register } from 'swiper/element/bundle'
-import { IconBlog } from '~/components/common/icons'
-import { AboutSection, ServicesSection } from '~/components/sections'
+import { AboutSection, ServicesSection, TestimonialsSection } from '~/components/sections'
+import { getAboutMeData } from '~/api/queries'
 
-const services = [
-  {
-    icon: IconBlog,
-    title: 'Team Leading',
-    text: 'The most modern and high-quality design made at a professional level.',
-  },
-  {
-    icon: IconBlog,
-    title: 'Engineers Interviewing',
-    text: 'High-quality development of sites at the professional level.',
-  },
-  {
-    icon: IconBlog,
-    title: 'Mentoring',
-    text: 'Professional development of applications for iOS and Android.',
-  },
-  {
-    icon: IconBlog,
-    title: 'Programming',
-    text: 'I make high-quality photos of any category at a professional level.',
-  },
-  {
-    icon: IconBlog,
-    title: 'Software Analysis and Design',
-    text: 'I make high-quality photos of any category at a professional level.',
-  },
-]
-
-register()
+const { data } = useAsyncData('about-me-data', getAboutMeData)
 </script>
 
 <template>
-  <div>
-    <AboutSection />
-    <ServicesSection :services="services" />
+  <div v-if="data">
+    <AboutSection :content="data.bio" />
+    <ServicesSection :list="data.services ?? []" />
+    <TestimonialsSection :list="data.testimonials ?? []" />
   </div>
 </template>
 
