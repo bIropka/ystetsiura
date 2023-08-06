@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { register } from 'swiper/element/bundle'
-import { onMounted } from 'vue'
 import { SectionTitle } from '~/components/common'
 import { TestimonialType } from '~/types'
 import sanityInageBuilder from '~/api/sanity-inage-builder'
 
-const props = defineProps<{
+defineProps<{
   list: TestimonialType[]
 }>()
-
-onMounted(() => {
-  console.log(props.list)
-})
 
 register()
 </script>
@@ -19,8 +14,8 @@ register()
 <template>
   <section class="mt-12">
     <SectionTitle text="Testimonials" />
-    <swiper-container>
-      <swiper-slide v-for="(t, i) in list" :key="i + t.name" class="bg-dark rounded-3xl p-7">
+    <Swiper :loop="true">
+      <SwiperSlide v-for="(t, i) in list" :key="i + t.name" class="bg-dark rounded-3xl p-7">
         <div
           v-if="t.image"
           class="shrink-0 mr-4 h-24 w-24 flex items-center justify-center float-left border border-br rounded-xl"
@@ -43,8 +38,8 @@ register()
           </div>
           <p class="">{{ t.text }}</p>
         </div>
-      </swiper-slide>
-    </swiper-container>
+      </SwiperSlide>
+    </Swiper>
   </section>
 </template>
 
