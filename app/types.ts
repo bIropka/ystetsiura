@@ -7,17 +7,6 @@ export enum ExpLevel {
   EXPERT = 'Expert',
 }
 
-export type ExpItemType = {
-  title: string
-  date: string
-  text: string
-}
-
-export type SkillItem = {
-  title: string
-  value: ExpLevel
-}
-
 export type SocialType = {
   title: string
   url: string
@@ -55,10 +44,38 @@ export type ClientType = {
   image: SanityImageSource
 }
 
+export type PerkType = {
+  title: string
+  level: number
+}
+
+export type EducationType = {
+  title: string
+  start: string
+  finish: string
+  text: string
+}
+
+export type ExperienceType = {
+  title: string
+  start: string
+  isCurrent: boolean
+  finish: string
+  text: string
+  perks: PerkType[]
+}
+
 export type AboutMeDataType = {
   title: string
   bio: []
   services?: ServiceType[]
   testimonials?: TestimonialType[]
   clients?: ClientType[]
+}
+
+export type ResumeDataType = {
+  title: string
+  edu?: EducationType[]
+  exp?: ExperienceType[]
+  perks?: PerkType[]
 }

@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { SectionTitle } from '~/components/common'
-import { ExpLevel, SkillItem } from '~/types'
+import { PerkType } from '~/types'
 
-defineProps<{ content: SkillItem[] }>()
+defineProps<{ content: PerkType[] }>()
 
-const getValueText = (value: ExpLevel) => {
+/* const getValueText = (value: ExpLevel) => {
   switch (value) {
     case ExpLevel.BEGINNER:
       return 'w-1/4'
@@ -17,7 +17,7 @@ const getValueText = (value: ExpLevel) => {
     default:
       return ''
   }
-}
+} */
 </script>
 
 <template>
@@ -28,10 +28,10 @@ const getValueText = (value: ExpLevel) => {
         v-for="item in content"
         :key="item.title"
         class="flex justify-between items-center h-6 bg-gradient-to-br from-grad-start to-grad-stop rounded-3xl px-4 my-8"
-        :class="getValueText(item.value)"
+        :class="`w-[${item.level}%]`"
       >
         <span class="text-heading text-xs">{{ item.title }}</span>
-        <span class="text-heading text-xs">{{ item.value }}</span>
+        <span class="text-heading text-xs">{{ item.level }}</span>
       </li>
     </ul>
   </section>

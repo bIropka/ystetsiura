@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Component } from 'vue/dist/vue'
 import { SectionTitle } from '~/components/common'
-import { ExpItemType } from '~/types'
+import { EducationType, ExperienceType } from '~/types'
 
-defineProps<{ title: String; content: ExpItemType[]; icon?: Component }>()
+defineProps<{ title: String; content: ExperienceType[] | EducationType[]; icon?: Component }>()
 </script>
 
 <template>
@@ -27,9 +27,11 @@ defineProps<{ title: String; content: ExpItemType[]; icon?: Component }>()
           <circle opacity="0.15" cx="8.5" cy="8.5" r="8.5" fill="#0D86FF" />
           <circle cx="8.5" cy="8.5" r="4.5" fill="#0D86FF" />
         </svg>
-        <h4 class="text-heading">{{ item.title }}</h4>
-        <div class="text-body my-1 opacity-70">{{ item.date }}</div>
-        <div class="text-body">{{ item.text }}</div>
+        <h4 v-if="item.title" class="text-heading">{{ item.title }}</h4>
+        <div v-if="item.start && item.finish" class="text-body my-1 opacity-70">
+          {{ item.start }} - {{ item.finish }}
+        </div>
+        <div v-if="item.text" class="text-body">{{ item.text }}</div>
       </li>
     </ul>
   </section>

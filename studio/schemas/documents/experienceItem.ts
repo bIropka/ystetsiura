@@ -1,4 +1,4 @@
-import { defineField, defineType, DateRule, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'experienceItem',
@@ -9,16 +9,16 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Start date',
       name: 'startDate',
       type: 'date',
       options: {
-        dateFormat: 'M YYYY',
+        dateFormat: 'MM, YYYY',
       },
-      validation: (Rule: DateRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Is current position',
@@ -30,15 +30,15 @@ export default defineType({
       name: 'finishDate',
       type: 'date',
       options: {
-        dateFormat: 'M YYYY',
+        dateFormat: 'MM, YYYY',
       },
-      hidden: ({ document }) => document?.isCurrent,
+      hidden: ({ document }) => !!document?.isCurrent,
     }),
     defineField({
       name: 'text',
       title: 'Text',
       type: 'text',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'perks',

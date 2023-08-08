@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import { onMounted } from 'vue'
 import { PageTitle } from '~/components/common'
 import { EducationSection } from '~/components/sections'
-import { ExpItemType, ExpLevel, SkillItem } from '~/types'
 import SkillsSection from '~/components/sections/SkillsSection.vue'
 import { IconEducation, IconExperience } from '~/components/common/icons'
+import { getResumeData } from '~/api/queries'
 
-const education: ExpItemType[] = [
+/* const education: ExpItemType[] = [
   {
     title: 'University School of the Arts',
     date: '2015 — Present',
@@ -39,15 +40,26 @@ const skills: SkillItem[] = [
     title: 'Illustrator',
     value: ExpLevel.BEGINNER,
   },
-]
+] */
+
+const { data } = useAsyncData('resume-data', getResumeData)
+
+onMounted(() => {
+  console.log(data.value)
+})
 </script>
 
 <template>
-  <div>
+  <div v-if="data">
     <PageTitle text="Resume" />
-    <EducationSection title="Education" :content="education" :icon="IconEducation" />
-    <EducationSection title="Experience" :content="education" :icon="IconExperience" />
-    <SkillsSection :content="skills" />
+    <EducationSection v-if="data.edu" title="Education" :content="data.edu" :icon="IconEducation" />
+    <EducationSection
+      v-if="data.exp"
+      title="Experience"
+      :content="data.exp"
+      :icon="IconExperience"
+    />
+    <SkillsSection v-if="data.perks" :content="data.perks" />
   </div>
 </template>
 
