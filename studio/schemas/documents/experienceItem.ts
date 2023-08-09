@@ -35,6 +35,21 @@ export default defineType({
       hidden: ({ document }) => !!document?.isCurrent,
     }),
     defineField({
+      name: 'type',
+      title: 'Employment type',
+      type: 'string',
+      options: {
+        list: ['full-time', 'part-time'],
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'position',
+      title: 'Position',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'text',
       title: 'Text',
       type: 'text',

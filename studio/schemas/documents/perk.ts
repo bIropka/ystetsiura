@@ -11,12 +11,6 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: 'level',
-      title: 'Level',
-      type: 'number',
-      validation: (Rule) => Rule.required().min(0).max(100),
-    }),
   ],
   preview: {
     select: {

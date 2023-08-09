@@ -23,11 +23,5 @@ export default defineType({
       type: 'array',
       of: [{ type: 'reference', to: { type: 'experienceItem' } }],
     }),
-    defineField({
-      name: 'perks',
-      title: 'Perks',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'perk' } }],
-    }),
   ],
 })

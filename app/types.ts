@@ -1,12 +1,5 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
-export enum ExpLevel {
-  BEGINNER = 'Beginner',
-  MEDIUM = 'Medium',
-  ADVANCED = 'Advanced',
-  EXPERT = 'Expert',
-}
-
 export type SocialType = {
   title: string
   url: string
@@ -46,7 +39,6 @@ export type ClientType = {
 
 export type PerkType = {
   title: string
-  level: number
 }
 
 export type EducationType = {
