@@ -4,8 +4,8 @@ import { IconAbout, IconBlog, IconContact, IconResume, IconWorks } from '~/compo
 const links = [
   { title: 'About', icon: IconAbout, path: '/' },
   { title: 'resume', icon: IconResume, path: '/resume' },
-  { title: 'works', icon: IconWorks, path: '/works' },
-  { title: 'blog', icon: IconBlog, path: '/blog' },
+  /* { title: 'works', icon: IconWorks, path: '/works' },
+  { title: 'blog', icon: IconBlog, path: '/blog' }, */
   { title: 'contact', icon: IconContact, path: '/contact' },
 ]
 
