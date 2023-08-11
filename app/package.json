@@ -26,6 +26,8 @@
     "nuxt": "^3.6.1",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "sass": "^1.65.1",
+    "sass-loader": "^13.3.2",
     "typescript": "^5.1.6"
   },
   "dependencies": {
@@ -34,6 +36,7 @@
     "@sanity/client": "^6.2.0",
     "@sanity/image-url": "^1.0.2",
     "nuxt-swiper": "^1.2.0",
-    "sanity-blocks-vue-component": "^1.0.1"
+    "sanity-blocks-vue-component": "^1.0.1",
+    "vuetify": "^3.3.12"
   }
 }

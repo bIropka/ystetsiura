@@ -15,18 +15,12 @@ export default defineType({
       title: 'Start date',
       name: 'startDate',
       type: 'date',
-      options: {
-        dateFormat: 'YYYY',
-      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Finish date',
       name: 'finishDate',
       type: 'date',
-      options: {
-        dateFormat: 'YYYY',
-      },
       validation: (Rule) => Rule.required(),
     }),
     defineField({

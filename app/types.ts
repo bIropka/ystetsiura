@@ -41,20 +41,15 @@ export type PerkType = {
   title: string
 }
 
-export type EducationType = {
+export type EduExpType = {
   title: string
-  start: string
-  finish: string
-  text: string
-}
-
-export type ExperienceType = {
-  title: string
-  start: string
-  isCurrent: boolean
-  finish: string
-  text: string
-  perks: PerkType[]
+  startDate: string
+  isCurrent?: boolean
+  finishDate?: string
+  type?: 'Full-time' | 'Part-time'
+  position?: string
+  text?: string
+  perks?: PerkType[]
 }
 
 export type AboutMeDataType = {
@@ -67,7 +62,7 @@ export type AboutMeDataType = {
 
 export type ResumeDataType = {
   title: string
-  edu?: EducationType[]
-  exp?: ExperienceType[]
+  edu?: EduExpType[]
+  exp?: EduExpType[]
   perks?: PerkType[]
 }

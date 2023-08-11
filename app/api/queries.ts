@@ -10,4 +10,6 @@ export const getAboutMeData = async (): Promise<AboutMeDataType> =>
   )
 
 export const getResumeData = async (): Promise<ResumeDataType> =>
-  await sanityClient.fetch(`*[_type == "resume"][0]{..., edu[]->, exp[]->, perks[]->}`)
+  await sanityClient.fetch(
+    `*[_type == "resume"][0]{..., edu[]->{..., perks[]->}, exp[]->{..., perks[]->}}`
+  )

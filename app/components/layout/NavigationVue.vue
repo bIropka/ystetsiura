@@ -13,7 +13,7 @@ const route = useRoute()
 </script>
 
 <template>
-  <nav class="block bg-surface col-span-1 rounded-3xl p-7 self-start">
+  <nav class="block bg-board col-span-1 rounded-3xl p-7 self-start">
     <ul class="flex flex-col gap-y-4">
       <li v-for="link in links" :key="link.path">
         <NuxtLink

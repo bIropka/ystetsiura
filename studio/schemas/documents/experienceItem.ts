@@ -39,7 +39,7 @@ export default defineType({
       title: 'Employment type',
       type: 'string',
       options: {
-        list: ['full-time', 'part-time'],
+        list: ['Full-time', 'Part-time'],
       },
       validation: (Rule) => Rule.required(),
     }),

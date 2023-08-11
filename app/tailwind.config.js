@@ -26,7 +26,7 @@ module.exports = {
       heading: '#FCFCFC',
       orange: '#FF965D',
       overlay: '#2E2F36',
-      surface: '#23262B',
+      board: '#23262B',
     },
     gridTemplateRows: {
       default: 'auto 1fr',
