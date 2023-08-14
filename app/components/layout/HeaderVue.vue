@@ -17,6 +17,8 @@ const { data } = useAsyncData('personal-data', getPersonalData)
           class="w-full h-full object-cover object-top"
           :src="sanityInageBuilder(data.image).url()"
           :alt="data.firstName + ' ' + data.lastName"
+          width="132"
+          height="132"
         />
       </div>
       <h2 v-if="data.firstName && data.lastName" class="text-2xl font-pmedium text-heading">

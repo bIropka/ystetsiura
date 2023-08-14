@@ -14,13 +14,17 @@ register()
 <template>
   <section class="mt-12">
     <SectionTitle text="Testimonials" />
-    <Swiper :loop="true">
-      <SwiperSlide v-for="(t, i) in list" :key="i + t.name" class="bg-dark rounded-3xl p-7">
+    <Swiper :loop="true" class="w-full bg-dark rounded-3xl">
+      <SwiperSlide v-for="(t, i) in list" :key="i + t.name" class="p-7">
         <div
           v-if="t.image"
           class="shrink-0 mr-4 h-24 w-24 flex items-center justify-center float-left border border-br rounded-xl"
         >
-          <img :src="sanityInageBuilder(t.image).width(80).url()" :alt="t.company ?? 'Company'" />
+          <nuxt-img
+            :src="sanityInageBuilder(t.image).width(80).url()"
+            :alt="t.company ?? 'Company'"
+            width="80"
+          />
         </div>
         <div v-if="t.text" class="grow">
           <span v-if="t.name" class="text-heading font-pmedium text-xl">{{ t.name }}</span>
@@ -33,8 +37,9 @@ register()
               :href="t.url"
               target="_blank"
               class="text-accent hover:underline"
-              >{{ t.project }}</a
             >
+              {{ t.project }}
+            </a>
           </div>
           <p class="">{{ t.text }}</p>
         </div>
