@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { $fetch } from 'ofetch'
 import { SectionTitle } from '~/components/common'
 
 const valid = ref<boolean>(false)
 const fullname = ref<string>('')
 const email = ref<string>('')
 const message = ref<string>('')
+const errorMessage = ref<string | null>(null)
 const nameRules = [(value: string) => (value ? true : 'Name is required.')]
 const emailRules = [
   (value: string) => (value ? true : 'E-mail is requred.'),
@@ -15,7 +17,9 @@ const messageRules = [(value: string) => (value ? true : 'Message is required.')
 const submit = (event: SubmitEvent) => {
   event.preventDefault()
   if (!valid.value) return
-  console.log(fullname.value, email.value, message.value)
+  $fetch('')
+    .then()
+    .catch((error) => (errorMessage.value = error?.message))
 }
 </script>
 

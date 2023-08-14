@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@fawmi/vue-google-maps": "^0.9.79",
+    "@netlify/functions": "^1.6.0",
     "@nuxtjs/sanity": "^1.8.1",
     "@sanity/client": "^6.2.0",
     "@sanity/image-url": "^1.0.2",
