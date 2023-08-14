@@ -1,7 +1,13 @@
 import type { HandlerEvent } from '@netlify/functions'
 
 const handler = (event: HandlerEvent) => {
-  console.log(event.body)
+  return {
+    headers: {
+      'content-type': 'text/json',
+    },
+    statusCode: 200,
+    body: event.body,
+  }
 }
 
 export { handler }
