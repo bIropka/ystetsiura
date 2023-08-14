@@ -9,6 +9,7 @@ import { HeaderVue, NavigationVue, ContentVue } from '~/components/layout'
         class="block w-full h-full object-cover"
         src="/images/imageBg.png"
         alt="Yegor Stetsiura personal website"
+        format="webp"
         width="1440"
         height="316"
       />

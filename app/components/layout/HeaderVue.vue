@@ -13,10 +13,11 @@ const { data } = useAsyncData('personal-data', getPersonalData)
         v-if="data.image"
         class="w-36 h-36 rounded-[32px] overflow-hidden border-[6px] border-board absolute left-7 -top-7"
       >
-        <img
+        <nuxt-img
           class="w-full h-full object-cover object-top"
-          :src="sanityInageBuilder(data.image).url()"
+          :src="sanityInageBuilder(data.image).width(132).height(132).url()"
           :alt="data.firstName + ' ' + data.lastName"
+          format="webp"
           width="132"
           height="132"
         />

@@ -23,6 +23,7 @@ register()
           <nuxt-img
             :src="sanityInageBuilder(t.image).width(80).url()"
             :alt="t.company ?? 'Company'"
+            format="webp"
             width="80"
           />
         </div>
