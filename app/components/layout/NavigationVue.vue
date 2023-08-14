@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IconAbout, IconBlog, IconContact, IconResume, IconWorks } from '~/components/common/icons'
+import { IconAbout, IconContact, IconResume } from '~/components/common/icons'
 
 const links = [
   { title: 'About', icon: IconAbout, path: '/' },

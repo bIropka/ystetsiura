@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Component } from 'vue'
 import { SectionTitle } from '~/components/common'
-import { EduExpType, PerkType } from '~/types'
+import { EduExpType } from '~/types'
 
-const props = defineProps<{ title: String; content: EduExpType[]; icon?: Component }>()
+defineProps<{ title: String; content: EduExpType[]; icon?: Component }>()
 
 const getDate = (date: string) =>
   new Intl.DateTimeFormat('en-US', {
@@ -11,16 +11,6 @@ const getDate = (date: string) =>
     year: 'numeric',
   }).format(new Date(date))
 
-const getPerksList = (list: EduExpType[]) => {
-  const result = new Set<string>()
-  list.forEach((item: EduExpType) => {
-    item.perks?.forEach((perk: PerkType) => {
-      result.add(perk.title)
-    })
-  })
-  return result
-}
-const perks = ref<Set<string>>(getPerksList(props.content))
 const filtered = ref<Set<string>>(new Set())
 
 const updateFiltered = (perk: string) =>
