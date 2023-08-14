@@ -14,10 +14,16 @@ const emailRules = [
 ]
 const messageRules = [(value: string) => (value ? true : 'Message is required.')]
 
+const lambdasUrl = import.meta.env.VITE_LAMBDAS_URL
+
 const submit = (event: SubmitEvent) => {
   event.preventDefault()
   if (!valid.value) return
-  $fetch('')
+  if (!lambdasUrl) {
+    errorMessage.value = 'Currently this form unavailable, please try later!'
+    return
+  }
+  $fetch(`${lambdasUrl}contact-form`)
     .then()
     .catch((error) => (errorMessage.value = error?.message))
 }
