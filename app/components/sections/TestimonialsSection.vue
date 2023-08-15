@@ -2,7 +2,7 @@
 import { register } from 'swiper/element/bundle'
 import { SectionTitle } from '~/components/common'
 import { TestimonialType } from '~/types'
-import sanityInageBuilder from '~/api/sanity-inage-builder'
+import sanityImageBuilder from '~/api/sanity-image-builder'
 
 defineProps<{
   list: TestimonialType[]
@@ -21,7 +21,7 @@ register()
           class="shrink-0 mr-4 h-24 w-24 flex items-center justify-center float-left border border-br rounded-xl"
         >
           <nuxt-img
-            :src="sanityInageBuilder(t.image).width(80).url()"
+            :src="sanityImageBuilder(t.image).width(80).url()"
             :alt="t.company ?? 'Company'"
             format="webp"
             width="80"

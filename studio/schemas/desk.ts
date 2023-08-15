@@ -5,7 +5,7 @@ const structure = (S: StructureBuilder) =>
     .id('general')
     .title('Content')
     .items([
-      S.documentListItem().id('personalData').title('Personal Data').schemaType('personalData'),
+      S.documentListItem().id('personalData').title('General Data').schemaType('personalData'),
       S.divider(),
       S.listItem()
         .title('Pages')

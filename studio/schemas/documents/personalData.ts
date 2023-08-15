@@ -6,6 +6,15 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
+      name: 'headerImage',
+      title: 'Header Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'image',
       title: 'Photo',
       type: 'image',

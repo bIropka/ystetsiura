@@ -12,6 +12,7 @@ export type PersonalDataType = {
   email: string
   location: string
   phone: string
+  headerImage: SanityImageSource
   image: SanityImageSource
   position: string
   socialList: SocialType[]
