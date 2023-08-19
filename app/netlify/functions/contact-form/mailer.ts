@@ -1,7 +1,7 @@
 import * as path from 'path'
 import { stripHtml } from 'string-strip-html'
 import { renderFile } from 'ejs'
-import { ContactFormDataType } from '../../../types'
+import { ContactFormDataType } from '~/types'
 
 const ejsOpt = {
   async: true,
