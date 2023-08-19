@@ -31,10 +31,10 @@ const prepareData = (data: ContactFormDataType) => {
 const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
   return await renderFile(
     path.join(
-      host?.includes('localhost') ? process.cwd() : __dirname,
+      host?.includes('localhost') ? process.cwd() : '',
       host?.includes('localhost')
         ? '/netlify/functions/contact-form/template.html.ejs'
-        : '/template.html.ejs'
+        : './template.html.ejs'
     ),
     data,
     ejsOpt
