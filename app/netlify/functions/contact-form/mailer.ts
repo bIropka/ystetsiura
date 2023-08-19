@@ -34,7 +34,7 @@ const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
       host?.includes('localhost') ? process.cwd() : '',
       host?.includes('localhost')
         ? '/netlify/functions/contact-form/template.html.ejs'
-        : './template.html.ejs'
+        : '/var/task/app/contact-form/template.html.ejs'
     ),
     data,
     ejsOpt
