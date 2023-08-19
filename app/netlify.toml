@@ -1,0 +1,4 @@
+[context.dev.environment]
+VITE_LAMBDAS_URL="http://localhost:8888/.netlify/functions/"
+[context.production.environment]
+VITE_LAMBDAS_URL="https://istetsiura.com/.netlify/functions/"

@@ -67,3 +67,9 @@ export type ResumeDataType = {
   exp?: EduExpType[]
   perks?: PerkType[]
 }
+
+export type ContactFormDataType = {
+  fullname: string
+  email: string
+  message: string
+}
