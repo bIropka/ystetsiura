@@ -1,8 +1,7 @@
 import * as path from 'path'
 import { stripHtml } from 'string-strip-html'
+import { renderFile } from 'ejs'
 import { ContactFormDataType } from '../../../types'
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const ejs = require('ejs')
 
 const ejsOpt = {
   async: true,
@@ -30,7 +29,7 @@ const prepareData = (data: ContactFormDataType) => {
 }
 
 const getHtml = async (data: ContactFormDataType) => {
-  return await ejs.renderFile(
+  return await renderFile(
     path.join(process.cwd(), '/netlify/functions/contact-form/template.html.ejs'),
     data,
     ejsOpt
