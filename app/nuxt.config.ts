@@ -11,9 +11,6 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  vite: {
-    server: {},
-  },
   modules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',

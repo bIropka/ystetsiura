@@ -28,9 +28,12 @@ const prepareData = (data: ContactFormDataType) => {
   return result
 }
 
-const getHtml = async (data: ContactFormDataType) => {
+const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
   return await renderFile(
-    path.join(process.cwd(), '/netlify/functions/contact-form/template.html.ejs'),
+    path.join(
+      host?.includes('localhost') ? process.cwd() : __dirname,
+      '/netlify/functions/contact-form/template.html.ejs'
+    ),
     data,
     ejsOpt
   )
@@ -46,9 +49,9 @@ const getMsg = (data: ContactFormDataType, html: string) => {
   }
 }
 
-const messageTo = async (data: ContactFormDataType) => {
+const messageTo = async (data: ContactFormDataType, host: string | undefined) => {
   const preparedData = prepareData(data)
-  const html = await getHtml(data)
+  const html = await getHtml(data, host)
 
   return getMsg(preparedData, html)
 }

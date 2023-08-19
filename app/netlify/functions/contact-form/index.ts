@@ -1,7 +1,7 @@
 import type { HandlerEvent } from '@netlify/functions'
 import sgMail from '@sendgrid/mail'
-import { ContactFormDataType } from '../../../types'
 import { apiKey, configIsValid, messageTo } from './mailer'
+import { ContactFormDataType } from '~/types'
 
 const handler = async (event: HandlerEvent) => {
   if (event.httpMethod !== 'POST') {
@@ -39,7 +39,7 @@ const handler = async (event: HandlerEvent) => {
   sgMail.setApiKey(apiKey)
   sgMail.setTimeout(8000)
 
-  const emails = [await messageTo(data)]
+  const emails = [await messageTo(data, event.headers.host)]
   try {
     await Promise.all([sgMail.send(emails)])
     return {
