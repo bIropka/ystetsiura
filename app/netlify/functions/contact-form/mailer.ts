@@ -29,12 +29,12 @@ const prepareData = (data: ContactFormDataType) => {
 }
 
 const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
-  console.log('process.cwd()', process.cwd())
-  console.log('__dirname', __dirname)
   return await renderFile(
     path.join(
-      host?.includes('localhost') ? process.cwd() : '',
-      '/netlify/functions/contact-form/template.html.ejs'
+      process.cwd(),
+      host?.includes('localhost')
+        ? '/netlify/functions/contact-form/template.html.ejs'
+        : '/template.html.ejs'
     ),
     data,
     ejsOpt
