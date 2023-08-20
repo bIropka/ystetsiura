@@ -7,10 +7,7 @@
     "serve": "netlify serve --context dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "npm --prefix ./netlify/functions/contact-form i",
-    "lint": "npm run lint:js && npm run lint:prettier",
-    "lint:prettier": "prettier --check ..",
-    "lint:fix": "prettier --write --list-different .. && yarn lint:js --fix"
+    "postinstall": "npm --prefix ./netlify/functions/contact-form i"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",

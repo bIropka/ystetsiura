@@ -1,25 +1,25 @@
 * {
-    @apply font-pregular box-border m-0 p-0;
+  @apply font-pregular box-border m-0 p-0;
 }
 
 p {
-    @apply text-body my-4;
+  @apply text-body my-4;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-    font-display: swap;
+  font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins Medium';
-    src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
-    font-display: swap;
+  font-family: 'Poppins Medium';
+  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins Bold';
-    src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
-    font-display: swap;
+  font-family: 'Poppins Bold';
+  src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+  font-display: swap;
 }

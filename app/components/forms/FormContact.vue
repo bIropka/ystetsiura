@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { $fetch } from 'ofetch'
 import { ContactFormDataType } from '~/types'
 
 const form = ref<any>(null)
@@ -41,10 +40,10 @@ const submit = (event: SubmitEvent) => {
       message: message.value,
     } as ContactFormDataType,
   })
-    .then((res) => {
+    .then(() => {
       form.value?.reset()
       form.value?.resetValidation()
-      successMessage.value = res.message
+      successMessage.value = "Thanks! Your message was sent successfully. I'll try to answer soon."
     })
     .catch(() => {
       /** todo logging

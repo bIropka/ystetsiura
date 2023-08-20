@@ -43,7 +43,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: "Thanks! Your message was sent successfully. I'll try to answer soon.",
+        message: 'Success!',
       }),
     }
   } catch (e) {
