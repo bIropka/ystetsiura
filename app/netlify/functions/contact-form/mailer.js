@@ -32,8 +32,8 @@ const getHtml = async (data, host) => {
     path.join(
       host?.includes('localhost') ? process.cwd() : __dirname,
       host?.includes('localhost')
-        ? '/netlify/functions/contact-form/template/template.html.ejs'
-        : '/template/template.html.ejs'
+        ? '/netlify/functions/contact-form/templates/template.html.ejs'
+        : '/templates/template.html.ejs'
     ),
     data,
     ejsOpt
