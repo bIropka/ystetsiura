@@ -1,4 +1,4 @@
-import * as path from 'path'
+import path from 'path'
 import { stripHtml } from 'string-strip-html'
 import { renderFile } from 'ejs'
 import { ContactFormDataType } from '~/types'
@@ -31,10 +31,10 @@ const prepareData = (data: ContactFormDataType) => {
 const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
   return await renderFile(
     path.join(
-      host?.includes('localhost') ? process.cwd() : '',
+      host?.includes('localhost') ? process.cwd() : __dirname,
       host?.includes('localhost')
         ? '/netlify/functions/contact-form/template.html.ejs'
-        : '/var/task/app/contact-form/template.html.ejs'
+        : '/template.html.ejs'
     ),
     data,
     ejsOpt
