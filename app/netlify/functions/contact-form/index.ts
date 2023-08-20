@@ -1,6 +1,6 @@
 import type { HandlerEvent } from '@netlify/functions'
 import sgMail from '@sendgrid/mail'
-import { ContactFormDataType } from '~/types'
+import { ContactFormDataType } from '../../../types'
 import { apiKey, configIsValid, messageTo } from './mailer'
 
 const handler = async (event: HandlerEvent) => {
