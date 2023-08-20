@@ -1,4 +1,4 @@
-import { defineField, defineType, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'projectCategory',
@@ -9,7 +9,7 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

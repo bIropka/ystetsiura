@@ -73,3 +73,16 @@ export type ContactFormDataType = {
   email: string
   message: string
 }
+
+export type ProjectCategoryType = {
+  title: string
+}
+
+export type ProjectType = {
+  image: SanityImageSource
+  title: string
+  category: ProjectCategoryType[]
+  perks: PerkType[]
+  role: string
+  description: string
+}

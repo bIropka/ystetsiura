@@ -1,4 +1,4 @@
-import { defineField, defineType, ImageRule, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'project',
@@ -12,13 +12,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule: ImageRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'category',
@@ -36,13 +36,13 @@ export default defineType({
       name: 'role',
       title: 'Role',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'text',
-      validation: (Rule: StringRule) => Rule.required(),
+      type: 'blockContent',
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {
