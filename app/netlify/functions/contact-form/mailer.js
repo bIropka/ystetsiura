@@ -1,7 +1,6 @@
 import path from 'path'
 import { stripHtml } from 'string-strip-html'
 import { renderFile } from 'ejs'
-import { ContactFormDataType } from '../../../types'
 
 const ejsOpt = {
   async: true,
@@ -20,7 +19,7 @@ const configIsValid = () => {
   return true
 }
 
-const prepareData = (data: ContactFormDataType) => {
+const prepareData = (data) => {
   const result = { ...data }
   data.message = stripHtml(data.message || '', {
     ignoreTags: ['br'],
@@ -28,7 +27,7 @@ const prepareData = (data: ContactFormDataType) => {
   return result
 }
 
-const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
+const getHtml = async (data, host) => {
   return await renderFile(
     path.join(
       host?.includes('localhost') ? process.cwd() : __dirname,
@@ -41,7 +40,7 @@ const getHtml = async (data: ContactFormDataType, host: string | undefined) => {
   )
 }
 
-const getMsg = (data: ContactFormDataType, html: string) => {
+const getMsg = (data, html) => {
   return {
     to: 'Iegor Stetsiura <biropka@gmail.com>',
     from: `istetsiura.com <${fromEmail}>`,
@@ -51,7 +50,7 @@ const getMsg = (data: ContactFormDataType, html: string) => {
   }
 }
 
-const messageTo = async (data: ContactFormDataType, host: string | undefined) => {
+const messageTo = async (data, host) => {
   const preparedData = prepareData(data)
   const html = await getHtml(data, host)
 

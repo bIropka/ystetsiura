@@ -1,9 +1,7 @@
-import type { HandlerEvent } from '@netlify/functions'
 import sgMail from '@sendgrid/mail'
-import { ContactFormDataType } from '../../../types'
 import { apiKey, configIsValid, messageTo } from './mailer'
 
-const handler = async (event: HandlerEvent) => {
+const handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -28,7 +26,7 @@ const handler = async (event: HandlerEvent) => {
     }
   }
 
-  const data: ContactFormDataType | null = JSON.parse(event.body) ?? null
+  const data = JSON.parse(event.body) ?? null
   if (data === null) {
     return {
       statusCode: 400,
@@ -48,7 +46,7 @@ const handler = async (event: HandlerEvent) => {
         message: "Thanks! Your message was sent successfully. I'll try to answer soon.",
       }),
     }
-  } catch (e: unknown) {
+  } catch (e) {
     return {
       statusCode: 500,
       body: JSON.stringify({ message: e instanceof Error ? e.message : e }),
