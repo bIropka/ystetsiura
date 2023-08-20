@@ -1,7 +1,7 @@
 import sgMail from '@sendgrid/mail'
 import { apiKey, configIsValid, messageTo } from './mailer'
 
-const handler = async (event) => {
+exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return {
       statusCode: 405,
@@ -37,7 +37,7 @@ const handler = async (event) => {
   sgMail.setApiKey(apiKey)
   sgMail.setTimeout(8000)
 
-  const emails = [await messageTo(data, event.headers.host)]
+  const emails = [await messageTo(data)]
   try {
     await Promise.all([sgMail.send(emails)])
     return {
@@ -53,5 +53,3 @@ const handler = async (event) => {
     }
   }
 }
-
-export { handler }

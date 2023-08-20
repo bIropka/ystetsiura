@@ -1,6 +1,9 @@
-import path from 'path'
-import { stripHtml } from 'string-strip-html'
-import { renderFile } from 'ejs'
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const path = require('path')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const ejs = require('ejs')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { stripHtml } = require('string-strip-html')
 
 const ejsOpt = {
   async: true,
@@ -27,17 +30,8 @@ const prepareData = (data) => {
   return result
 }
 
-const getHtml = async (data, host) => {
-  return await renderFile(
-    path.join(
-      host?.includes('localhost') ? process.cwd() : __dirname,
-      host?.includes('localhost')
-        ? '/netlify/functions/contact-form/templates/template.html.ejs'
-        : '/templates/template.html.ejs'
-    ),
-    data,
-    ejsOpt
-  )
+const getHtml = async (data) => {
+  return await ejs.renderFile(path.join(__dirname, 'templates/template.html.ejs'), data, ejsOpt)
 }
 
 const getMsg = (data, html) => {
@@ -50,11 +44,15 @@ const getMsg = (data, html) => {
   }
 }
 
-const messageTo = async (data, host) => {
+const messageTo = async (data) => {
   const preparedData = prepareData(data)
-  const html = await getHtml(data, host)
+  const html = await getHtml(data)
 
   return getMsg(preparedData, html)
 }
 
-export { apiKey, configIsValid, messageTo }
+module.exports = {
+  apiKey,
+  configIsValid,
+  messageTo,
+}
