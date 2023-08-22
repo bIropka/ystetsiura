@@ -7,6 +7,7 @@ import works from './pages/works'
 /* documents */
 import author from './documents/author'
 import category from './documents/category'
+import customOuterLink from './documents/customOuterLink'
 import client from './documents/client'
 import educationItem from './documents/educationItem'
 import experienceItem from './documents/experienceItem'
@@ -32,6 +33,7 @@ export const schemaTypes = [
   author,
   category,
   client,
+  customOuterLink,
   educationItem,
   experienceItem,
   perk,

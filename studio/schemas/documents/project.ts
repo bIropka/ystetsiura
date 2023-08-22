@@ -27,6 +27,12 @@ export default defineType({
       of: [{ type: 'reference', to: { type: 'projectCategory' } }],
     }),
     defineField({
+      name: 'links',
+      title: 'Links',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'customOuterLink' } }],
+    }),
+    defineField({
       name: 'perks',
       title: 'Perks',
       type: 'array',
