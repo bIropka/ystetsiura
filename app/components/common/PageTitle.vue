@@ -9,7 +9,7 @@ defineProps({
 
 <template>
   <div>
-    <h2 class="font-pbold text-3xl relative pb-4 mb-6 text-heading">{{ text }}</h2>
+    <h2 class="font-pbold font-bold text-3xl relative pb-4 mb-6 text-heading">{{ text }}</h2>
   </div>
 </template>
 

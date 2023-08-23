@@ -21,6 +21,23 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      title: 'Project start year',
+      name: 'projectStartYear',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      title: 'Project end year',
+      name: 'projectEndYear',
+      type: 'date',
+      options: {
+        dateFormat: 'YYYY',
+      },
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'array',

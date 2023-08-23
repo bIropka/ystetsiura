@@ -3,7 +3,7 @@
 }
 
 p {
-  @apply text-body my-4;
+  @apply text-body;
 }
 
 @font-face {

@@ -1,4 +1,4 @@
-import { defineField, defineType, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'works',
@@ -9,7 +9,13 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'projects',
+      title: 'Projects',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'project' } }],
     }),
   ],
 })

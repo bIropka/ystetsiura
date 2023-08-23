@@ -53,9 +53,44 @@ export type EduExpType = {
   perks?: PerkType[]
 }
 
+export type CustomLinkType = {
+  title: string
+  url: string
+}
+
+export type ProjectCategoryType = {
+  title: string
+}
+
+export type PostCategoryType = {
+  title: string
+}
+
+export type ProjectType = {
+  image: SanityImageSource
+  title: string
+  category?: ProjectCategoryType[]
+  links?: CustomLinkType[]
+  projectStartYear: string
+  projectEndYear?: string
+  perks?: PerkType[]
+  role: string
+  description: any[]
+}
+
+export type PostType = {
+  image: SanityImageSource
+  title: string
+  slug: string
+  description: string
+  postCategory?: PostCategoryType[]
+  postDate: string
+  content: string
+}
+
 export type AboutMeDataType = {
   title: string
-  bio: []
+  bio: any[]
   services?: ServiceType[]
   testimonials?: TestimonialType[]
   clients?: ClientType[]
@@ -68,21 +103,13 @@ export type ResumeDataType = {
   perks?: PerkType[]
 }
 
+export type WorksDataType = {
+  title: string
+  projects?: ProjectType[]
+}
+
 export type ContactFormDataType = {
   fullname: string
   email: string
   message: string
-}
-
-export type ProjectCategoryType = {
-  title: string
-}
-
-export type ProjectType = {
-  image: SanityImageSource
-  title: string
-  category: ProjectCategoryType[]
-  perks: PerkType[]
-  role: string
-  description: string
 }
