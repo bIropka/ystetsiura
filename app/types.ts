@@ -66,6 +66,12 @@ export type PostCategoryType = {
   title: string
 }
 
+export type AuthorType = {
+  name: string
+  image: SanityImageSource
+  bio: any[]
+}
+
 export type ProjectType = {
   image: SanityImageSource
   title: string
@@ -79,13 +85,14 @@ export type ProjectType = {
 }
 
 export type PostType = {
-  image: SanityImageSource
   title: string
   slug: string
   description: string
-  postCategory?: PostCategoryType[]
-  postDate: string
-  content: string
+  author: AuthorType
+  mainImage: SanityImageSource
+  categories?: PostCategoryType[]
+  publishedAt: string
+  body: any[]
 }
 
 export type AboutMeDataType = {
