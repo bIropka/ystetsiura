@@ -53,6 +53,10 @@ export type EduExpType = {
   perks?: PerkType[]
 }
 
+export type SlugType = {
+  current: string
+}
+
 export type CustomLinkType = {
   title: string
   url: string
@@ -86,7 +90,7 @@ export type ProjectType = {
 
 export type PostType = {
   title: string
-  slug: string
+  slug: SlugType
   description: string
   author: AuthorType
   mainImage: SanityImageSource
@@ -113,6 +117,11 @@ export type ResumeDataType = {
 export type WorksDataType = {
   title: string
   projects?: ProjectType[]
+}
+
+export type BlogDataType = {
+  title: string
+  posts?: PostType[]
 }
 
 export type ContactFormDataType = {

@@ -37,7 +37,7 @@ defineProps<{ project?: ProjectType }>()
         height="218"
       />
     </div>
-    <div class="p-4">
+    <div class="p-6">
       <h3 v-if="project.title" class="text-heading text-xl font-bold font-pbold">
         {{ project.title }}
       </h3>

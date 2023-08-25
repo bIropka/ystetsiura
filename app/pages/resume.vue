@@ -10,7 +10,7 @@ const { data } = useAsyncData('resume-data', getResumeData)
 
 <template>
   <div v-if="data">
-    <PageTitle text="Resume" />
+    <PageTitle :text="data.title" />
     <EducationSection v-if="data.edu" title="Education" :content="data.edu" :icon="IconEducation" />
     <EducationSection
       v-if="data.exp"

@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import { PageTitle } from '~/components/common'
+import { CardPost, PageTitle } from '~/components/common'
+import { getBlogData } from '~/api/queries'
+
+const { data } = useAsyncData('blog-data', getBlogData)
 </script>
 
 <template>
-  <PageTitle text="Blog" />
+  <div v-if="data">
+    <PageTitle v-if="data.title" :text="data.title" />
+    <div class="grid grid-cols-2 gap-6">
+      <CardPost v-for="(p, i) in data.posts" :key="i + p.title" :post="p" />
+    </div>
+  </div>
 </template>
 
 <style scoped lang="css"></style>

@@ -6,7 +6,6 @@ import FormContact from '~/components/forms/FormContact.vue'
 <template>
   <div>
     <PageTitle text="Contact" />
-
     <FormContact />
   </div>
 </template>
