@@ -24,7 +24,7 @@ const updateFiltered = (perk: string) =>
       <li
         v-for="(item, index) in content"
         :key="item.title"
-        class="mb-5 relative"
+        class="relative mb-5"
         :class="{ decorated: index < content.length - 1 }"
       >
         <svg
@@ -38,24 +38,24 @@ const updateFiltered = (perk: string) =>
           <circle opacity="0.15" cx="8.5" cy="8.5" r="8.5" fill="#0D86FF" />
           <circle cx="8.5" cy="8.5" r="4.5" fill="#0D86FF" />
         </svg>
-        <div v-if="item.startDate && (item.finishDate || item.isCurrent)" class="text-grey text-xs">
+        <div v-if="item.startDate && (item.finishDate || item.isCurrent)" class="text-xs text-grey">
           <span>{{ getDate(item.startDate) }}</span>
           <span> - </span>
           <span v-if="item.isCurrent">Present</span>
           <span v-else-if="item.finishDate">{{ getDate(item.finishDate) }}</span>
         </div>
         <h4 v-if="item.title">
-          <span class="text-heading text-lg font-medium">{{ item.title }}</span>
-          <span class="text-body ml-2">/ {{ item.type }}</span>
+          <span class="text-lg font-medium text-heading">{{ item.title }}</span>
+          <span class="ml-2 text-body">/ {{ item.type }}</span>
         </h4>
-        <div v-if="item.text" class="text-body text-sm">{{ item.text }}</div>
-        <ul class="flex flex-wrap items-center content-start text-xs mt-2">
+        <div v-if="item.text" class="text-sm text-body">{{ item.text }}</div>
+        <ul class="flex flex-wrap content-start items-center text-xs">
           <li
             v-for="(p, i) in item.perks"
             :key="i + p.title"
-            class="border cursor-pointer mr-2 py-0.5 px-1 rounded-md"
+            class="mr-2 mt-2 cursor-pointer rounded-md border px-1 py-0.5"
             :class="
-              filtered.has(p.title) ? 'border-overlay bg-heading' : 'bg-grey border-br shadow-2xl'
+              filtered.has(p.title) ? 'border-overlay bg-heading' : 'shadow-2xl border-br bg-grey'
             "
             @click="() => updateFiltered(p.title)"
           >
@@ -69,6 +69,6 @@ const updateFiltered = (perk: string) =>
 
 <style scoped lang="css">
 .decorated {
-  @apply z-[1] before:content-[''] before:block before:w-px before:h-[calc(100%+14px)] before:absolute before:-left-5 before:top-3 before:bg-br before:-z-[1];
+  @apply z-[1] before:absolute before:-left-5 before:top-3 before:-z-[1] before:block before:h-[calc(100%+14px)] before:w-px before:bg-br before:content-[''];
 }
 </style>

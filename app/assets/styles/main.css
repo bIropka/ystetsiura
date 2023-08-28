@@ -6,6 +6,11 @@ p {
   @apply text-body;
 }
 
+input,
+textarea {
+  @apply bg-transparent;
+}
+
 @font-face {
   font-family: 'Poppins';
   src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
