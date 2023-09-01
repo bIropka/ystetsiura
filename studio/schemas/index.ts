@@ -11,6 +11,7 @@ import customOuterLink from './documents/customOuterLink'
 import client from './documents/client'
 import educationItem from './documents/educationItem'
 import experienceItem from './documents/experienceItem'
+import navigation from './documents/navigation'
 import perk from './documents/perk'
 import personalData from './documents/personalData'
 import post from './documents/post'
@@ -36,6 +37,7 @@ export const schemaTypes = [
   customOuterLink,
   educationItem,
   experienceItem,
+  navigation,
   perk,
   personalData,
   post,

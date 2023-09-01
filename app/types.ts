@@ -1,8 +1,24 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
 
+export type DecorProps = {
+  left: number
+  width: number
+}
+
 export type SocialType = {
   title: string
   url: string
+}
+
+export type SlugType = {
+  current: string
+}
+
+export type NavigationListType = 'mobile' | 'desktop'
+
+export type NavigationItemType = {
+  title: string
+  slug: SlugType
 }
 
 export type PersonalDataType = {
@@ -16,6 +32,7 @@ export type PersonalDataType = {
   image: SanityImageSource
   position: string
   socialList: SocialType[]
+  navs: NavigationItemType[]
 }
 
 export type ServiceType = {
@@ -51,10 +68,6 @@ export type EduExpType = {
   position?: string
   text?: string
   perks?: PerkType[]
-}
-
-export type SlugType = {
-  current: string
 }
 
 export type CustomLinkType = {

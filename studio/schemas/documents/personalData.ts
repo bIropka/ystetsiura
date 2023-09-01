@@ -6,13 +6,10 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'headerImage',
-      title: 'Header Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      validation: (Rule) => Rule.required(),
+      name: 'navs',
+      title: 'Navigation list',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'navigation' } }],
     }),
     defineField({
       name: 'image',

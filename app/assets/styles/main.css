@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
-  @apply font-pregular box-border m-0 p-0;
+  @apply box-border m-0 p-0;
+}
+
+html {
+  @apply font-opensans;
 }
 
 p {
@@ -9,22 +16,4 @@ p {
 input,
 textarea {
   @apply bg-transparent;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../../assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins Medium';
-  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins Bold';
-  src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
-  font-display: swap;
 }

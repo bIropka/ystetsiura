@@ -1,7 +1,7 @@
 <script setup lang="ts">
 useHead({
   bodyAttrs: {
-    class: 'bg-dark',
+    class: 'bg-surface-board',
   },
 })
 </script>

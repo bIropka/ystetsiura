@@ -9,7 +9,7 @@ import {
 } from '~/types'
 
 export const getPersonalData = async (): Promise<PersonalDataType> =>
-  await sanityClient.fetch(`*[_type == "personalData"][0]{..., socialList[]->}`)
+  await sanityClient.fetch(`*[_type == "personalData"][0]{..., socialList[]->, navs[]->}`)
 
 export const getAboutMeData = async (): Promise<AboutMeDataType> =>
   await sanityClient.fetch(

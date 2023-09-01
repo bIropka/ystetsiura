@@ -10,10 +10,14 @@ module.exports = {
   ],
   plugins: [],
   theme: {
+    screens: {
+      large: { max: '1600px' },
+      middle: { max: '1040px' },
+      small: { max: '768px' },
+    },
     fontFamily: {
-      pregular: ['Poppins Regular', 'sans-serif'],
-      pmedium: ['Poppins Medium', 'sans-serif'],
-      pbold: ['Poppins Bold', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      opensans: ['Open Sans', 'sans-serif'],
     },
     gridTemplateRows: {
       default: 'auto 1fr',
@@ -23,6 +27,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        'text-basic': '#7d7789',
+        'text-heading': '#333',
+        'surface-board': '#f6fbff',
+        white: '#fff',
+        /*          old vars        */
         'grad-start': '#0DA2FF',
         'grad-stop': '#05F',
         accent: '#0D86FF',
