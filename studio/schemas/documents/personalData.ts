@@ -21,6 +21,21 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'imageSecond',
+      title: 'Photo Second',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'logoText',
+      title: 'logo Text',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
       name: 'firstName',
       title: 'First Name',
       type: 'string',

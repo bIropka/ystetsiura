@@ -13,14 +13,12 @@ router.afterEach(() => {
 </script>
 
 <template>
-  <header
-    class="fixed left-0 right-0 top-0 z-10 flex items-center justify-between bg-white px-16 py-0 middle:hidden"
-  >
+  <header class="fixed left-0 right-0 top-0 z-10 items-center justify-between bg-white px-16 py-0">
     <NuxtLink
       class="text font-poppins text-2xl font-extrabold uppercase tracking-widest text-black no-underline"
       to="/"
     >
-      <span class="relative top-0.5">ISTETSIURA</span>
+      <span class="relative top-0.5">{{ content.logoText ?? 'logotype' }}</span>
     </NuxtLink>
     <NavigationList :links="content.navs" type="desktop" />
   </header>

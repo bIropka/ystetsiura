@@ -6,6 +6,8 @@ const props = defineProps<{
   type: NavigationListType
 }>()
 
+const emit = defineEmits(['closeMenu'])
+
 const list = computed(() =>
   props.links.map((l) => ({ title: l.title, url: l.slug ? `/${l.slug.current}` : '/' }))
 )
@@ -56,6 +58,7 @@ onMounted(() => {
 
 router.afterEach((current) => {
   path.value = current.path
+  props.type === 'mobile' && emit('closeMenu')
 })
 </script>
 
@@ -63,7 +66,7 @@ router.afterEach((current) => {
   <nav
     ref="nav"
     :class="{
-      'menu_list float-left clear-both mb-[50px] h-auto w-full': type === 'mobile',
+      'float-left clear-both h-auto w-full': type === 'mobile',
       relative: type === 'desktop',
     }"
     @mouseleave="listHoverOff"
@@ -83,7 +86,8 @@ router.afterEach((current) => {
             'font-poppins text-[#333]': type === 'mobile',
             'block px-8 py-2.5 font-poppins font-medium transition-all duration-300 hover:text-white':
               type === 'desktop',
-            'active default': path === link.url,
+            'active default': path === link.url && type === 'desktop',
+            underline: path === link.url && type === 'mobile',
           }"
           @mouseenter="itemHoverOn"
         >

@@ -7,6 +7,7 @@ export type DecorProps = {
 
 export type SocialType = {
   title: string
+  icon: SanityImageSource
   url: string
 }
 
@@ -22,6 +23,7 @@ export type NavigationItemType = {
 }
 
 export type PersonalDataType = {
+  logoText: string
   firstName: string
   lastName: string
   birthday: string
@@ -30,6 +32,7 @@ export type PersonalDataType = {
   phone: string
   headerImage: SanityImageSource
   image: SanityImageSource
+  imageSecond: SanityImageSource
   position: string
   socialList: SocialType[]
   navs: NavigationItemType[]

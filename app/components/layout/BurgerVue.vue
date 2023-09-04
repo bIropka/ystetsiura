@@ -1,14 +1,18 @@
 <script setup lang="ts">
-const isActive = ref<boolean>(false)
+defineProps<{
+  isActive: boolean
+}>()
+
+const emit = defineEmits(['toggleMenu'])
+
+const clicked = () => {
+  emit('toggleMenu')
+}
 </script>
 
 <template>
-  <div class="relative top-[5px]">
-    <div
-      class="hamburger hamburger--slider"
-      :class="{ 'is-active': isActive }"
-      @click="() => (isActive = !isActive)"
-    >
+  <div class="relative h-6">
+    <div class="hamburger hamburger--slider" :class="{ 'is-active': isActive }" @click="clicked">
       <div class="hamburger-box">
         <div class="hamburger-inner"></div>
       </div>
@@ -19,6 +23,7 @@ const isActive = ref<boolean>(false)
 <style scoped lang="css">
 .hamburger {
   font: inherit;
+  font-size: 0;
   display: inline-block;
   overflow: visible;
   margin: 0;
@@ -59,7 +64,6 @@ const isActive = ref<boolean>(false)
 .hamburger-inner {
   top: 2px;
   display: block;
-  margin-top: -2px;
 }
 .hamburger-inner,
 .hamburger-inner:after,
