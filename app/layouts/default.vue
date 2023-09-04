@@ -4,6 +4,8 @@ import { getPersonalData } from '~/api/queries'
 
 const { data } = useAsyncData('personal-data', getPersonalData)
 
+const name = computed(() => `${data.value?.firstName} ${data.value?.lastName}`)
+
 onMounted(() => {
   console.log(data.value)
 })
@@ -12,9 +14,9 @@ onMounted(() => {
 <template>
   <div v-if="data" class="relative min-h-screen w-full min-w-[320px]">
     <HeaderMobile class="hidden middle:block" :content="data" />
-    <HeaderDesktop class="flex middle:hidden" :content="data" />
-    <ContentVue :image="data.image" :name="`${data.firstName} ${data.lastName}`" />
-    <FooterVue />
+    <HeaderDesktop class="block middle:hidden" :content="data" />
+    <ContentVue :image="data.image" :name="name" />
+    <FooterVue :list="data.socialList" :name="name" />
   </div>
 </template>
 

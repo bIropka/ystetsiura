@@ -2,6 +2,7 @@
 import { BurgerVue, NavigationList } from '~/components/layout'
 import { PersonalDataType } from '~/types'
 import sanityImageBuilder from '~/api/sanity-image-builder'
+import SocialList from '~/components/common/SocialList.vue'
 
 defineProps<{
   content: PersonalDataType
@@ -45,22 +46,12 @@ const isActive = ref<boolean>(false)
           class="my-12"
           @close-menu="() => (isActive = false)"
         />
-        <ul class="mb-4 flex items-center justify-end">
-          <li v-for="(item, i) in content.socialList" :key="i + item.title" class="ml-2">
-            <NuxtLink
-              v-if="item.url && item.icon"
-              :to="item.url"
-              target="_blank"
-              :title="item.title"
-            >
-              <nuxt-img
-                :src="sanityImageBuilder(item.icon).url()"
-                :alt="`${content.firstName} ${content.lastName}, ${item.title}`"
-                format="svg"
-              />
-            </NuxtLink>
-          </li>
-        </ul>
+        <SocialList
+          v-if="content.socialList"
+          :list="content.socialList"
+          :name="`${content.firstName} ${content.lastName}`"
+          class="mb-4"
+        />
         <div class="float-left w-full">
           <p class="font-poppins text-[#333]">Copyright &copy; {{ new Date().getFullYear() }}</p>
         </div>

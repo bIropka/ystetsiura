@@ -26,6 +26,9 @@ module.exports = {
       nav: '-4px -4px 5px 0px rgba(0, 0, 0, 0.20) inset, 4px 4px 5px 0px rgba(255, 255, 255, 0.23) inset',
     },
     extend: {
+      maxWidth: {
+        'full-hd': '1920px',
+      },
       colors: {
         'text-basic': '#7d7789',
         'text-heading': '#333',

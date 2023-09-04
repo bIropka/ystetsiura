@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <main
-    class="absolute inset-[70px] overflow-hidden middle:inset-x-0 middle:bottom-0 middle:top-[55px]"
+    class="absolute inset-[70px] block overflow-hidden middle:inset-x-0 middle:bottom-0 middle:top-[55px] middle:hidden"
   >
     <div class="absolute bottom-0 left-0 top-0 z-[15] w-[40%]">
       <div
@@ -19,11 +19,11 @@ defineProps<{
       >
         <nuxt-img
           class="h-full w-full object-cover object-center"
-          :src="sanityImageBuilder(image).width(80).height(80).url()"
+          :src="sanityImageBuilder(image).width(960).height(1280).url()"
           :alt="name"
           format="webp"
-          width="80"
-          height="80"
+          width="960"
+          height="1280"
         />
       </div>
     </div>
