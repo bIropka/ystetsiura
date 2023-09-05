@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     screens: {
       large: { max: '1600px' },
+      tablet: { max: '1280px' },
       middle: { max: '1040px' },
       small: { max: '768px' },
     },
@@ -28,6 +29,11 @@ module.exports = {
     extend: {
       maxWidth: {
         'full-hd': '1920px',
+      },
+      width: {
+        'photo-small': '480px',
+        'photo-medium': '640px',
+        'photo-large': '740px',
       },
       colors: {
         'text-basic': '#7d7789',

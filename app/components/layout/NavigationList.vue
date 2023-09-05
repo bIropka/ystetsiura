@@ -71,19 +71,19 @@ router.afterEach((current) => {
     }"
     @mouseleave="listHoverOff"
   >
-    <ul :class="{ transition_link: type === 'mobile', 'flex py-3': type === 'desktop' }">
+    <ul :class="{ transition_link: type === 'mobile', 'flex py-2.5': type === 'desktop' }">
       <li
         v-for="(link, i) in list"
         :key="i + link.url"
         :class="{
-          'mb-[7px]': type === 'mobile',
+          'mb-2': type === 'mobile',
         }"
       >
         <NuxtLink
           :to="link.url"
           class="text-text-heading"
           :class="{
-            'font-poppins text-[#333]': type === 'mobile',
+            'font-poppins text-text-heading': type === 'mobile',
             'block px-8 py-2.5 font-poppins font-medium transition-all duration-300 hover:text-white':
               type === 'desktop',
             'active default': path === link.url && type === 'desktop',
@@ -97,7 +97,7 @@ router.afterEach((current) => {
     </ul>
     <div
       v-if="type === 'desktop'"
-      class="absolute bottom-[15px] top-[15px] z-[-1] block w-[30px] bg-[#333] transition-all duration-500"
+      class="absolute bottom-2.5 top-2.5 -z-10 block w-8 bg-text-heading transition-all duration-500"
       :style="`left: ${decor.left}px; width: ${decor.width}px;`"
     ></div>
   </nav>

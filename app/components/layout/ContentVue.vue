@@ -9,14 +9,9 @@ defineProps<{
 </script>
 
 <template>
-  <main
-    class="absolute inset-[70px] block overflow-hidden middle:inset-x-0 middle:bottom-0 middle:top-[55px] middle:hidden"
-  >
-    <div class="absolute bottom-0 left-0 top-0 z-[15] w-[40%]">
-      <div
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        data-img-url="assets/img/about/1.jpg"
-      >
+  <main class="absolute inset-x-0 inset-y-16 block overflow-hidden middle:hidden">
+    <div class="mx-auto flex h-full w-full max-w-full-hd px-8">
+      <div class="tablet:w-photo-small large:w-photo-medium w-photo-large relative shrink-0">
         <nuxt-img
           class="h-full w-full object-cover object-center"
           :src="sanityImageBuilder(image).width(960).height(1280).url()"
@@ -26,9 +21,9 @@ defineProps<{
           height="1280"
         />
       </div>
-    </div>
-    <div class="absolute bottom-0 right-0 top-0 w-[60%]">
-      <slot></slot>
+      <div class="grow-1">
+        <slot></slot>
+      </div>
     </div>
   </main>
 </template>

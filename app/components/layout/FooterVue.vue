@@ -10,7 +10,7 @@ defineProps<{
 
 <template>
   <footer class="fixed inset-x-0 bottom-0 z-10 bg-white middle:hidden">
-    <div class="max-w-full-hd mx-auto flex h-16 w-full items-center justify-between px-8">
+    <div class="mx-auto flex h-16 w-full max-w-full-hd items-center justify-between px-8">
       <span class="font-poppins text-text-heading"
         >Copyright &copy; {{ new Date().getFullYear() }}</span
       >
