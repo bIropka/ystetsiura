@@ -40,6 +40,7 @@ module.exports = {
         'text-heading': '#333',
         'surface-board': '#f6fbff',
         white: '#fff',
+        black: '#000',
         /*          old vars        */
         'grad-start': '#0DA2FF',
         'grad-stop': '#05F',

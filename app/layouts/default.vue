@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { HeaderMobile, HeaderDesktop, ContentVue, FooterVue } from '~/components/layout'
+import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
 import { getPersonalData } from '~/api/queries'
+import sanityImageBuilder from '~/api/sanity-image-builder'
 
 const { data } = useAsyncData('personal-data', getPersonalData)
 
@@ -15,7 +16,25 @@ onMounted(() => {
   <div v-if="data" class="relative min-h-screen w-full min-w-[320px]">
     <HeaderMobile class="hidden middle:block" :content="data" />
     <HeaderDesktop class="block middle:hidden" :content="data" />
-    <ContentVue :image="data.image" :name="name" />
+    <main class="absolute inset-x-0 inset-y-16 block overflow-hidden">
+      <div class="mx-auto flex h-full w-full max-w-full-hd px-8">
+        <div
+          class="relative w-photo-large shrink-0 large:w-photo-medium tablet:w-photo-small middle:hidden"
+        >
+          <nuxt-img
+            class="h-full w-full object-cover object-center"
+            :src="sanityImageBuilder(data.image).width(960).height(1280).url()"
+            :alt="name"
+            format="webp"
+            width="960"
+            height="1280"
+          />
+        </div>
+        <div class="grow-1 pl-10 middle:pl-0">
+          <slot />
+        </div>
+      </div>
+    </main>
     <FooterVue :list="data.socialList" :name="name" />
   </div>
 </template>

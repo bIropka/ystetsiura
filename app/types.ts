@@ -33,7 +33,7 @@ export type PersonalDataType = {
   headerImage: SanityImageSource
   image: SanityImageSource
   imageSecond: SanityImageSource
-  position: string
+  position: string[]
   socialList: SocialType[]
   navs: NavigationItemType[]
 }

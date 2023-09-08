@@ -50,8 +50,8 @@ export default defineType({
     defineField({
       name: 'position',
       title: 'Position',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [{ type: 'string' }],
     }),
     defineField({
       name: 'socialList',
