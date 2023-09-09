@@ -1,10 +1,4 @@
-<script setup lang="ts">
-useHead({
-  bodyAttrs: {
-    class: 'bg-surface-board',
-  },
-})
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <NuxtLayout>

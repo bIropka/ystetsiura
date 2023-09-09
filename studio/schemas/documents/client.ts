@@ -1,4 +1,4 @@
-import { defineField, defineType, ImageRule, StringRule } from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'client',
@@ -12,13 +12,13 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule: ImageRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule: StringRule) => Rule.required(),
+      validation: (Rule) => Rule.required(),
     }),
   ],
   preview: {

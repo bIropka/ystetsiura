@@ -1,7 +1,7 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-  name: 'blog',
+  name: 'blogPage',
   title: 'Blog',
   type: 'document',
   fields: [
@@ -9,7 +9,6 @@ export default defineType({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'posts',
