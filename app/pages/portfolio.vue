@@ -10,7 +10,7 @@ const { data } = useAsyncData('projects-data', getWorksData)
   <div v-if="data">
     <CustomHead :title="`${data.title} - ` ?? ''" />
     <PageTitle :text="data.title" />
-    <div class="grid gap-6 sm:grid-cols-2">
+    <div class="sm:grid-cols-2 grid gap-6">
       <CardProject v-for="(p, i) in data.projects" :key="i + p.title" :project="p" />
     </div>
   </div>

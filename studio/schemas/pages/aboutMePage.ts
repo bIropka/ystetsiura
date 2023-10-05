@@ -14,6 +14,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'sectionAboutMeList',
+      title: 'About Me List',
+      type: 'aboutMeListObject',
+      options: {
+        collapsed: true,
+      },
+    }),
+    defineField({
       name: 'sectionServices',
       title: 'Services',
       type: 'servicesObject',

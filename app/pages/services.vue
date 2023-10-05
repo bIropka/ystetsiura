@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { PageTitle } from '~/components/common'
 import { EducationSection } from '~/components/sections'
-import SkillsSection from '~/components/sections/SkillsSection.vue'
+import SkillsSection from '~/components/sections/SectionPerks.vue'
 import { IconEducation, IconExperience } from '~/components/common/icons'
 import { getResumeData } from '~/api/queries'
 import CustomHead from '~/components/layout/CustomHead.vue'

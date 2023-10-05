@@ -8,9 +8,10 @@ export default defineType({
   fields: [
     ...defaultSectionFields,
     defineField({
-      name: 'text',
-      title: 'Text',
-      type: 'blockContentObject',
+      name: 'list',
+      title: 'List',
+      type: 'array',
+      of: [{ type: 'aboutListItem' }],
     }),
   ],
 })

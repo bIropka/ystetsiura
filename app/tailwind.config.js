@@ -23,6 +23,15 @@ module.exports = {
     gridTemplateRows: {
       default: 'auto 1fr',
     },
+    letterSpacing: {
+      tighter: '-.005em',
+      tight: '-.025em',
+      normal: '0',
+      wide: '.025em',
+      wider: '.05em',
+      widest: '.1em',
+      xxl: '8px',
+    },
     boxShadow: {
       nav: '-4px -4px 5px 0px rgba(0, 0, 0, 0.20) inset, 4px 4px 5px 0px rgba(255, 255, 255, 0.23) inset',
     },

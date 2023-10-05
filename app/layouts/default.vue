@@ -8,7 +8,7 @@ const { data } = useAsyncData('personal-data', getPersonalData)
 const name = computed(() => `${data.value?.firstName} ${data.value?.lastName}`)
 
 onMounted(() => {
-  console.log(data.value)
+  console.log('personal-data', data.value)
 })
 </script>
 

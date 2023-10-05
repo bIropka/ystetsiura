@@ -8,9 +8,9 @@ defineProps<{ project?: ProjectType }>()
 </script>
 
 <template>
-  <div v-if="project" class="relative overflow-hidden rounded-lg bg-overlay md:rounded-xl">
+  <div v-if="project" class="md:rounded-xl relative overflow-hidden rounded-lg bg-overlay">
     <button
-      class="absolute right-0 top-0 z-[4] select-none rounded-bl-lg rounded-tr-lg bg-dark/70 px-4 py-2 text-3xl text-heading hover:bg-dark/90 md:rounded-bl-xl md:rounded-tr-xl"
+      class="md:rounded-bl-xl md:rounded-tr-xl absolute right-0 top-0 z-[4] select-none rounded-bl-lg rounded-tr-lg bg-dark/70 px-4 py-2 text-3xl text-heading hover:bg-dark/90"
       @click="() => (infoIsVisible = !infoIsVisible)"
     >
       <span v-if="infoIsVisible">&ndash;</span>
@@ -18,7 +18,7 @@ defineProps<{ project?: ProjectType }>()
     </button>
     <div
       v-if="project.projectStartYear"
-      class="text-white absolute z-[2] rounded-br-lg rounded-tl-lg bg-orange p-2 font-pbold text-xl font-bold md:rounded-br-xl md:rounded-tl-xl"
+      class="font-pbold md:rounded-br-xl md:rounded-tl-xl absolute z-[2] rounded-br-lg rounded-tl-lg bg-orange p-2 text-xl font-bold text-white"
     >
       <span>{{ new Date(project.projectStartYear).getFullYear() }}</span>
       <span v-if="project.projectEndYear">

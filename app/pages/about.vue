@@ -1,17 +1,19 @@
 <script setup lang="ts">
-import { AboutSection, ServicesSection, TestimonialsSection } from '~/components/sections'
 import { getAboutMeData } from '~/api/queries'
 import CustomHead from '~/components/layout/CustomHead.vue'
+import { SectionAboutMe } from '~/components/sections'
 
 const { data } = useAsyncData('about-me-data', getAboutMeData)
+
+onMounted(() => {
+  console.log('about-me-data', data.value)
+})
 </script>
 
 <template>
   <div v-if="data">
-    <CustomHead :title="`${data.title} - ` ?? ''" />
-    <AboutSection :content="data.bio" />
-    <ServicesSection :list="data.services ?? []" />
-    <TestimonialsSection :list="data.testimonials ?? []" />
+    <CustomHead title="About Me" />
+    <SectionAboutMe :data="data.sectionAboutMe" />
   </div>
 </template>
 
