@@ -1,0 +1,43 @@
+{
+  "name": "istetsiura",
+  "version": "1.0.0",
+  "description": "Iegor Stetsiura personal website",
+  "keywords": [
+    "nuxt",
+    "vue",
+    "sanity",
+    "lerna"
+  ],
+  "author": "Iegor Stetsiura <iegor@istetsiura.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bIropka/ystetsiura/issues"
+  },
+  "homepage": "https://github.com/bIropka/ystetsiura#readme",
+  "workspaces": {
+    "packages": [
+      "app",
+      "studio"
+    ],
+    "nohoist": [
+      "**/postcss",
+      "**/postcss-*",
+      "three"
+    ]
+  },
+  "scripts": {
+    "build": "lerna run build --parallel",
+    "dev": "lerna run dev --parallel"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bIropka/ystetsiura.git"
+  },
+  "engines": {
+    "node": "16 || 18 || 20",
+    "npm": ">=9.5.0"
+  },
+  "dependencies": {
+    "lerna": "^7.3.0"
+  }
+}
