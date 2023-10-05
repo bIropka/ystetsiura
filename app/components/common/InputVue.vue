@@ -29,7 +29,7 @@ defineProps({
       :type="type"
       :placeholder="placeholder"
       :value="value"
-      class="block w-full h-14 leading-[56px] px-4 text-body bg-overlay rounded-3xl"
+      class="block h-14 w-full rounded-3xl bg-overlay px-4 leading-[56px] text-body"
       :class="inputClasses"
     />
   </label>

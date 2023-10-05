@@ -58,8 +58,8 @@ const submit = (event: SubmitEvent) => {
 <template>
   <v-form ref="form" v-model="valid" @submit="submit">
     <v-container class="!p-0">
-      <v-row class="!p-0 !my-0 !-mx-3">
-        <v-col cols="12" md="6" class="!py-1 !px-3">
+      <v-row class="!-mx-3 !my-0 !p-0">
+        <v-col cols="12" md="6" class="!px-3 !py-1">
           <v-text-field
             v-model="fullname"
             :rules="nameRules"
@@ -72,7 +72,7 @@ const submit = (event: SubmitEvent) => {
           ></v-text-field>
         </v-col>
 
-        <v-col cols="12" md="6" class="!py-1 !px-3">
+        <v-col cols="12" md="6" class="!px-3 !py-1">
           <v-text-field
             v-model="email"
             :rules="emailRules"
@@ -85,7 +85,7 @@ const submit = (event: SubmitEvent) => {
           ></v-text-field>
         </v-col>
 
-        <v-col cols="12" md="12" class="!py-1 !px-3">
+        <v-col cols="12" md="12" class="!px-3 !py-1">
           <v-textarea
             v-model="message"
             :rules="messageRules"
@@ -98,16 +98,16 @@ const submit = (event: SubmitEvent) => {
           ></v-textarea>
         </v-col>
 
-        <v-col cols="12" md="12" class="!py-1 !px-3">
+        <v-col cols="12" md="12" class="!px-3 !py-1">
           <span v-if="errorMessage" class="text-error">{{ errorMessage }}</span>
           <span v-if="successMessage" class="text-success">{{ successMessage }}</span>
         </v-col>
       </v-row>
-      <div class="flex justify-end mt-4">
+      <div class="mt-4 flex justify-end">
         <v-btn
           type="submit"
           size="x-large"
-          class="!bg-gradient-to-br !from-grad-start !to-grad-stop !rounded-3xl !text-heading"
+          class="!rounded-3xl !bg-gradient-to-br !from-grad-start !to-grad-stop !text-heading"
           :loading="loading"
         >
           <span>Send Message</span>

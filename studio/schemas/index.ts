@@ -30,6 +30,7 @@ import perksObject from './objects/perksObject'
 import portfolioObject from './objects/portfolioObject'
 import servicesObject from './objects/servicesObject'
 import testimonialsObject from './objects/testimonialsObject'
+import aboutMeListObject from './objects/aboutMeListObject'
 
 export const schemaTypes = [
   /* pages */
@@ -57,6 +58,7 @@ export const schemaTypes = [
   testimonial,
   /* objects */
   aboutMeObject,
+  aboutMeListObject,
   blockContentObject,
   educationObject,
   experienceObject,

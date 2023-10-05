@@ -19,10 +19,10 @@ if (!data.value) {
 
 <template>
   <article v-if="data">
-    <h1 v-if="data.title" class="text-3xl text-heading font-pbold font-bold text-center">
+    <h1 v-if="data.title" class="font-pbold text-center text-3xl font-bold text-heading">
       {{ data.title }}
     </h1>
-    <p v-if="data.description" class="text-center my-4">{{ data.description }}</p>
+    <p v-if="data.description" class="my-4 text-center">{{ data.description }}</p>
     <SanityContent v-if="data.body" :blocks="data.body" />
   </article>
 </template>

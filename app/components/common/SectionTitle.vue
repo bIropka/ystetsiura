@@ -17,7 +17,7 @@ defineProps<{
   @apply mb-8 h-auto w-full overflow-hidden font-poppins font-bold uppercase text-text-heading;
 }
 .text {
-  @apply tracking-xxl relative inline-block;
+  @apply relative inline-block tracking-xxl;
 }
 .text:after {
   @apply absolute left-full top-2/4 ml-8 h-px w-[5000px] bg-text-basic content-[''];

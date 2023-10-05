@@ -9,15 +9,15 @@ defineProps({
 
 <template>
   <div>
-    <h2 class="font-pbold font-bold text-3xl relative pb-4 mb-6 text-heading">{{ text }}</h2>
+    <h2 class="font-pbold relative mb-6 pb-4 text-3xl font-bold text-heading">{{ text }}</h2>
   </div>
 </template>
 
 <style scoped lang="css">
 h2:before {
-  @apply content-[''] block w-4 h-1 bg-orange absolute left-0 bottom-0;
+  @apply absolute bottom-0 left-0 block h-1 w-4 bg-orange content-[''];
 }
 h2:after {
-  @apply content-[''] block w-8 h-1 bg-accent absolute left-4 bottom-0;
+  @apply absolute bottom-0 left-4 block h-1 w-8 bg-accent content-[''];
 }
 </style>

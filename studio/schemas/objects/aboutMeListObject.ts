@@ -3,7 +3,7 @@ import defaultSectionFields from '../utils/defaultSectionFields'
 
 export default defineType({
   title: 'About Me',
-  name: 'aboutMeObject',
+  name: 'aboutMeListObject',
   type: 'object',
   fields: [
     ...defaultSectionFields,
