@@ -66,7 +66,7 @@ router.afterEach((current) => {
   <nav
     ref="nav"
     :class="{
-      'float-left clear-both h-auto w-full': type === 'mobile',
+      'h-auto w-full': type === 'mobile',
       relative: type === 'desktop',
     }"
     @mouseleave="listHoverOff"

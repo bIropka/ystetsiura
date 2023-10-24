@@ -10,12 +10,6 @@ module.exports = {
   ],
   plugins: [],
   theme: {
-    screens: {
-      large: { max: '1600px' },
-      tablet: { max: '1280px' },
-      middle: { max: '1040px' },
-      small: { max: '768px' },
-    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
       opensans: ['Open Sans', 'sans-serif'],
@@ -36,13 +30,15 @@ module.exports = {
       nav: '-4px -4px 5px 0px rgba(0, 0, 0, 0.20) inset, 4px 4px 5px 0px rgba(255, 255, 255, 0.23) inset',
     },
     extend: {
+      screens: {
+        '3xl': '1920px',
+      },
       maxWidth: {
         'full-hd': '1920px',
+        'ultra-full-hd': '2560px',
       },
       width: {
-        'photo-small': '480px',
-        'photo-medium': '640px',
-        'photo-large': '740px',
+        photo: '740px',
       },
       colors: {
         'text-basic': '#7d7789',

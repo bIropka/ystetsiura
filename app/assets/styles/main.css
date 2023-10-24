@@ -10,7 +10,7 @@ html {
 }
 
 p {
-  @apply text-body;
+  @apply text-text-basic;
 }
 
 input,

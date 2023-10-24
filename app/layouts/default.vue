@@ -2,6 +2,7 @@
 import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
 import { getPersonalData } from '~/api/queries'
 import sanityImageBuilder from '~/api/sanity-image-builder'
+import GridVue from '~/components/layout/GridVue.vue'
 
 const { data } = useAsyncData('personal-data', getPersonalData)
 
@@ -14,13 +15,11 @@ onMounted(() => {
 
 <template>
   <div v-if="data" class="relative min-h-screen w-full min-w-[320px]">
-    <HeaderMobile class="hidden middle:block" :content="data" />
-    <HeaderDesktop class="block middle:hidden" :content="data" />
-    <main class="absolute inset-x-0 inset-y-16 block overflow-hidden small:inset-y-0 small:top-12">
-      <div class="mx-auto flex h-full w-full max-w-full-hd px-8 small:px-0">
-        <div
-          class="relative w-photo-large shrink-0 large:w-photo-medium tablet:w-photo-small middle:hidden"
-        >
+    <HeaderMobile class="3xl:hidden block" :content="data" />
+    <HeaderDesktop class="3xl:flex hidden" :content="data" />
+    <main class="3xl:inset-x-0 3xl:inset-y-16 absolute inset-y-0 top-12 w-full overflow-hidden">
+      <GridVue classes="flex">
+        <div class="3xl:block w-photo relative hidden shrink-0">
           <nuxt-img
             class="h-full w-full object-cover object-center"
             :src="sanityImageBuilder(data.image).width(960).height(1280).url()"
@@ -30,10 +29,10 @@ onMounted(() => {
             height="1280"
           />
         </div>
-        <div class="grow overflow-auto bg-surface-board px-12 py-24 small:px-8">
+        <div class="grow overflow-auto bg-surface-board px-8 py-16 sm:px-24 sm:py-24">
           <slot />
         </div>
-      </div>
+      </GridVue>
     </main>
     <FooterVue :list="data.socialList" :name="name" />
   </div>

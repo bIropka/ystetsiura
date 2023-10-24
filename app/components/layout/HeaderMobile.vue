@@ -53,7 +53,9 @@ const isActive = ref<boolean>(false)
           class="mb-4"
         />
         <div class="float-left w-full">
-          <p class="font-poppins text-[#333]">Copyright &copy; {{ new Date().getFullYear() }}</p>
+          <p class="font-poppins text-text-heading">
+            Copyright &copy; {{ new Date().getFullYear() }}
+          </p>
         </div>
       </div>
     </div>

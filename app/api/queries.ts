@@ -13,7 +13,7 @@ export const getPersonalData = async (): Promise<PersonalDataType> =>
 
 export const getAboutMeData = async (): Promise<AboutMeDataType> =>
   await sanityClient.fetch(
-    `*[_type == "aboutMe"][0]{..., sectionEducation{..., list[]->}, sectionExperience{..., list[]->}, sectionLanguages{..., list[]->}, sectionPerks{..., list[]->}, sectionServices{..., list[]->}, sectionTestimonials{..., list[]->}}`
+    `*[_type == "aboutMePage"][0]{..., sectionEducation{..., list[]->}, sectionExperience{..., list[]->}, sectionLanguages{..., list[]->}, sectionPerks{..., list[]->}, sectionServices{..., list[]->}, sectionTestimonials{..., list[]->}}`
   )
 
 export const getResumeData = async (): Promise<ResumeDataType> =>
