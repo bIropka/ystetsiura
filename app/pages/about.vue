@@ -13,7 +13,7 @@ onMounted(() => {
 <template>
   <div v-if="data">
     <CustomHead title="About Me" />
-    <SectionAboutMe :data="data.sectionAboutMe" />
+    <SectionAboutMe :content="data.sectionAboutMe" :list="data.sectionAboutMeList" />
   </div>
 </template>
 

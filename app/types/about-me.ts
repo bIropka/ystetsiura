@@ -8,12 +8,16 @@ import {
 
 export interface SectionAboutMeType extends defaultSectionType {
   title: string
+  text: any[]
+}
+
+export interface SectionAboutMeListType extends defaultSectionType {
+  title: string
   list: {
     label: string
     value: string
     _key: string
   }[]
-  text: any[]
 }
 
 export interface SectionEducationType extends defaultSectionType {
@@ -40,6 +44,7 @@ export interface SectionTestimonialsType extends defaultSectionType {
 
 export type AboutMeDataType = {
   sectionAboutMe: SectionAboutMeType
+  sectionAboutMeList: SectionAboutMeListType
   sectionEducation: SectionEducationType
   sectionExperience: SectionExperienceType
   sectionLanguages: SectionLanguagesType
