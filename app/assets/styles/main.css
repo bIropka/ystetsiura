@@ -14,7 +14,7 @@ p {
 }
 
 article p {
-  @apply my-3;
+  @apply mb-4;
 }
 
 input,

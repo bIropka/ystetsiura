@@ -20,6 +20,6 @@ defineProps<{
   @apply relative inline-block tracking-xxl;
 }
 .text:after {
-  @apply absolute left-full top-2/4 ml-8 h-px w-[5000px] bg-text-basic content-[''];
+  @apply absolute left-full top-2/4 ml-8 h-0.5 w-[5000px] bg-text-basic content-[''];
 }
 </style>
