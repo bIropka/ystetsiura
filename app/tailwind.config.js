@@ -46,6 +46,7 @@ module.exports = {
         'surface-board': '#f6fbff',
         white: '#fff',
         black: '#000',
+        'black-tr': 'rgba(0, 0, 0, .15)',
         /*          old vars        */
         'grad-start': '#0DA2FF',
         'grad-stop': '#05F',

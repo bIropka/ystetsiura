@@ -15,7 +15,7 @@ router.afterEach(() => {
 
 <template>
   <header class="fixed left-0 right-0 top-0 z-10 h-16 w-full bg-white">
-    <GridVue classes="flex items-center justify-between">
+    <GridVue is-wrapper classes="items-center justify-between px-0 3xl:px-16">
       <NuxtLink
         class="text font-poppins text-2xl font-extrabold uppercase tracking-widest text-black no-underline"
         to="/"

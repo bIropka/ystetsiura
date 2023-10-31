@@ -8,6 +8,8 @@ import {
   SectionProgramming,
 } from '~/components/sections'
 import SectionTitle from '~/components/common/SectionTitle.vue'
+import GridVue from '~/components/layout/GridVue.vue'
+import SectionEducation from '~/components/sections/SectionEducation.vue'
 
 const { data } = useAsyncData('about-me-data', getAboutMeData)
 
@@ -20,14 +22,18 @@ onMounted(() => {
   <div v-if="data">
     <CustomHead title="About Me" />
     <SectionTitle v-if="data.sectionAboutMe.title" :title="data.sectionAboutMe.title" />
-    <div class="mb-24 grid grid-cols-2 gap-x-16">
+    <GridVue classes="mb-24 gap-x-16" cols="2">
       <SectionAboutMe :content="data.sectionAboutMe" />
       <SectionAboutMeList :content="data.sectionAboutMeList" />
-    </div>
-    <div class="grid grid-cols-2 gap-x-16">
+    </GridVue>
+    <GridVue classes="mb-24 gap-x-16" cols="2">
       <SectionProgramming :content="data.sectionPerks" />
       <SectionLanguage :content="data.sectionLanguages" />
-    </div>
+    </GridVue>
+    <GridVue classes="mb-24 gap-x-16" cols="2">
+      <SectionEducation :content="data.sectionEducation" />
+      <SectionEducation :content="data.sectionExperience" />
+    </GridVue>
   </div>
 </template>
 

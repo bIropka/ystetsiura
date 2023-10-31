@@ -1,13 +1,17 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   classes?: string
+  isWrapper?: boolean
+  cols?: string
 }>()
+
+const gridClass = computed(() => (props.cols ? `grid grid-cols-${props.cols}` : undefined))
 </script>
 
 <template>
   <div
-    class="max-w-ultra-full-hd 3xl:px-16 mx-auto h-full w-full px-0"
-    :class="`${classes ? classes : ''}`"
+    class="h-full w-full"
+    :class="[isWrapper && 'mx-auto flex max-w-ultra-full-hd', classes, gridClass]"
   >
     <slot />
   </div>

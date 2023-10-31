@@ -10,8 +10,8 @@ defineProps<{
 </script>
 
 <template>
-  <footer class="3xl:block fixed inset-x-0 bottom-0 z-10 hidden h-16 w-full bg-white">
-    <GridVue classes="flex items-center justify-between">
+  <footer class="fixed inset-x-0 bottom-0 z-10 hidden h-16 w-full bg-white 3xl:block">
+    <GridVue is-wrapper classes="items-center justify-between px-0 3xl:px-16">
       <span class="font-poppins text-text-heading">
         Copyright &copy; {{ new Date().getFullYear() }}
       </span>

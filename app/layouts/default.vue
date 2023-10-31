@@ -15,11 +15,11 @@ onMounted(() => {
 
 <template>
   <div v-if="data" class="relative min-h-screen w-full min-w-[320px]">
-    <HeaderMobile class="3xl:hidden block" :content="data" />
-    <HeaderDesktop class="3xl:flex hidden" :content="data" />
-    <main class="3xl:inset-x-0 3xl:inset-y-16 absolute inset-y-0 top-12 w-full overflow-hidden">
-      <GridVue classes="flex">
-        <div class="3xl:block w-photo relative hidden shrink-0">
+    <HeaderMobile class="block 3xl:hidden" :content="data" />
+    <HeaderDesktop class="hidden 3xl:flex" :content="data" />
+    <main class="absolute inset-y-0 top-12 w-full overflow-hidden 3xl:inset-x-0 3xl:inset-y-16">
+      <GridVue is-wrapper classes="px-0 3xl:px-16">
+        <div class="relative hidden w-photo shrink-0 3xl:block">
           <nuxt-img
             class="h-full w-full object-cover object-center"
             :src="sanityImageBuilder(data.image).width(960).height(1280).url()"
