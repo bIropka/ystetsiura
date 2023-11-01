@@ -1,16 +1,11 @@
 <script setup lang="ts">
 import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
-import { getPersonalData } from '~/api/queries'
 import sanityImageBuilder from '~/api/sanity-image-builder'
 import GridVue from '~/components/layout/GridVue.vue'
+import { usePersonalDataStore } from '~/store'
 
-const { data } = useAsyncData('personal-data', getPersonalData)
-
-const name = computed(() => `${data.value?.firstName} ${data.value?.lastName}`)
-
-onMounted(() => {
-  console.log('personal-data', data.value)
-})
+const { data } = usePersonalDataStore()
+const name = computed(() => `${data?.firstName} ${data?.lastName}`)
 </script>
 
 <template>

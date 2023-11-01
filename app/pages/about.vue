@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { getAboutMeData } from '~/api/queries'
 import CustomHead from '~/components/layout/CustomHead.vue'
 import {
   SectionAboutMe,
@@ -10,12 +9,9 @@ import {
 import SectionTitle from '~/components/common/SectionTitle.vue'
 import GridVue from '~/components/layout/GridVue.vue'
 import SectionEducation from '~/components/sections/SectionEducation.vue'
+import { useAboutMePageStore } from '~/store'
 
-const { data } = useAsyncData('about-me-data', getAboutMeData)
-
-onMounted(() => {
-  console.log('about-me-data', data.value)
-})
+const { data } = useAboutMePageStore()
 </script>
 
 <template>

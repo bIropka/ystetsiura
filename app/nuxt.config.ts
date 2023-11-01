@@ -17,5 +17,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     'nuxt-swiper',
     '@nuxt/image',
+    '@pinia/nuxt',
   ],
 })

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { CardPost, PageTitle } from '~/components/common'
-import { getBlogData } from '~/api/queries'
 import CustomHead from '~/components/layout/CustomHead.vue'
+import { useBlogPageStore } from '~/store'
 
-const { data } = useAsyncData('blog-data', getBlogData)
+const { data } = useBlogPageStore()
 </script>
 
 <template>

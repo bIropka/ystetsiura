@@ -35,10 +35,12 @@
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@fawmi/vue-google-maps": "^0.9.79",
     "@nuxtjs/sanity": "^1.8.1",
+    "@pinia/nuxt": "^0.5.1",
     "@sanity/client": "^6.2.0",
     "@sanity/image-url": "^1.0.2",
     "h3": "^1.8.0",
     "nuxt-swiper": "^1.2.0",
+    "pinia": "^2.1.7",
     "sanity-blocks-vue-component": "^1.0.1",
     "vuetify": "^3.3.12"
   }

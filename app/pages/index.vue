@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Typed, type TypedOptions } from '@duskmoon/vue3-typed-js'
-import { getPersonalData } from '~/api/queries'
 import CustomHead from '~/components/layout/CustomHead.vue'
+import { usePersonalDataStore } from '~/store'
 
-const { data } = useAsyncData('personal-data', getPersonalData)
+const { data } = usePersonalDataStore()
 
 const options = computed<TypedOptions>(() => ({
-  strings: data.value?.position,
+  strings: data?.position,
   loop: true,
   typeSpeed: 75,
 }))

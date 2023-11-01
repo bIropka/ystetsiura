@@ -4,7 +4,8 @@ import { SectionEducationType } from '~/types/about-me'
 
 defineProps<{ content: SectionEducationType }>()
 
-const getDate = (date: string) =>
+const getDate = (date: string | undefined) =>
+  date &&
   new Intl.DateTimeFormat('en-US', {
     month: 'short',
     year: 'numeric',
@@ -36,9 +37,9 @@ const getDate = (date: string) =>
 
 <style scoped lang="css">
 .edu-list:before {
-  @apply bg-black-tr absolute left-0 top-0.5 block h-full w-px content-[''];
+  @apply absolute left-0 top-0.5 block h-full w-px bg-black-tr content-[''];
 }
 .edu-item:before {
-  @apply border-black-tr absolute -left-2.5 top-0 block h-5 w-5 rounded-full border border-solid bg-surface-board content-[''];
+  @apply absolute -left-2.5 top-0 block h-5 w-5 rounded-full border border-solid border-black-tr bg-surface-board content-[''];
 }
 </style>

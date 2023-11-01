@@ -24,6 +24,7 @@ const updateDecor = (left: number, width: number) => {
 }
 
 const setDefaultDecor = () => {
+  if (props.type === 'mobile') return
   const item = nav.value?.querySelector('ul li a.active') as HTMLElement
   item.classList.add('default')
   nav.value &&
@@ -51,14 +52,13 @@ const listHoverOff = () => {
   setDefaultDecor()
 }
 
-onMounted(() => {
-  if (props.type === 'mobile') return
-  setDefaultDecor()
-})
-
 router.afterEach((current) => {
   path.value = current.path
   props.type === 'mobile' && emit('closeMenu')
+})
+
+onMounted(() => {
+  setDefaultDecor()
 })
 </script>
 
@@ -86,7 +86,7 @@ router.afterEach((current) => {
             'font-poppins text-text-heading': type === 'mobile',
             'block px-8 py-2.5 font-poppins font-medium transition-all duration-300 hover:text-white':
               type === 'desktop',
-            'active default': path === link.url && type === 'desktop',
+            'active default text-white': path === link.url && type === 'desktop',
             underline: path === link.url && type === 'mobile',
           }"
           @mouseenter="itemHoverOn"
@@ -103,8 +103,4 @@ router.afterEach((current) => {
   </nav>
 </template>
 
-<style scoped lang="css">
-nav ul li a.active.default {
-  @apply text-white;
-}
-</style>
+<style scoped lang="css"></style>

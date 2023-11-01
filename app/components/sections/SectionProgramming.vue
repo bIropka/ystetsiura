@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { width } from 'ipx'
 import SectionTitle from '~/components/common/SectionTitle.vue'
 import { SectionPerksType } from '~/types/about-me'
 
