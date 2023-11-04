@@ -7,9 +7,9 @@ import {
   SectionProgramming,
 } from '~/components/sections'
 import SectionTitle from '~/components/common/SectionTitle.vue'
-import GridVue from '~/components/layout/GridVue.vue'
 import SectionEducation from '~/components/sections/SectionEducation.vue'
 import { useAboutMePageStore } from '~/store'
+import SectionTestimonials from '~/components/sections/SectionTestimonials.vue'
 
 const { data } = useAboutMePageStore()
 </script>
@@ -18,18 +18,19 @@ const { data } = useAboutMePageStore()
   <div v-if="data">
     <CustomHead title="About Me" />
     <SectionTitle v-if="data.sectionAboutMe.title" :title="data.sectionAboutMe.title" />
-    <GridVue classes="mb-24 gap-x-16" cols="2">
+    <div class="grid grid-cols-2 mb-24 gap-x-16">
       <SectionAboutMe :content="data.sectionAboutMe" />
       <SectionAboutMeList :content="data.sectionAboutMeList" />
-    </GridVue>
-    <GridVue classes="mb-24 gap-x-16" cols="2">
+    </div>
+    <div class="grid grid-cols-2 mb-24 gap-x-16">
       <SectionProgramming :content="data.sectionPerks" />
       <SectionLanguage :content="data.sectionLanguages" />
-    </GridVue>
-    <GridVue classes="mb-24 gap-x-16" cols="2">
+    </div>
+    <div class="grid grid-cols-2 mb-24 gap-x-16">
       <SectionEducation :content="data.sectionEducation" />
       <SectionEducation :content="data.sectionExperience" />
-    </GridVue>
+    </div>
+    <SectionTestimonials :content="data.sectionTestimonials" />
   </div>
 </template>
 

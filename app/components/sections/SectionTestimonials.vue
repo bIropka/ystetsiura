@@ -1,21 +1,56 @@
 <script setup lang="ts">
-import { register } from 'swiper/element/bundle'
-import { TestimonialType } from '~/types/common'
+import { SectionTestimonialsType } from '~/types/about-me'
+import SectionTitle from '~/components/common/SectionTitle.vue'
+import sanityImageBuilder from '~/api/sanity-image-builder'
 
 defineProps<{
-  list: TestimonialType[]
+  content: SectionTestimonialsType
 }>()
-
-register()
 </script>
 
 <template>
-  <div class="testimonials float-left clear-both mb-[90px] h-auto w-full">
+  <div v-if="content">
+    <SectionTitle v-if="content.title" :title="content.title" />
+    <v-window v-if="content.list" :continuous="true" :touch="true" show-arrows="hover">
+      <v-window-item v-for="item in content.list" :key="item._id">
+        <v-card class="!bg-transparent !flex justify-start items-start">
+          <div
+            v-if="item.text"
+            class="border border-black-tr py-6 px-8 text-text-basic mb-6 order-2 grow"
+          >
+            {{ item.text }}
+          </div>
+          <div class="shrink-0 flex items-center justify-start order-1">
+            <div
+              class="relative w-16 h-16 border border-black-tr rounded-full p-2 mr-4 bg-white overflow-hidden"
+            >
+              <nuxt-img
+                v-if="item.image"
+                class="h-full w-full object-contain object-center"
+                :src="sanityImageBuilder(item.image).url()"
+                :alt="item.name ?? 'The reviewer`s name'"
+                format="webp"
+                width="64"
+                height="64"
+              />
+            </div>
+            <div class="w-44">
+              <span v-if="item.name" class="font-bold">{{ item.name }}</span>
+              <span v-if="item.company" class="block my-1 font-medium">{{ item.company }}</span>
+              <span v-if="item.position" class="text-text-basic italic">{{ item.position }}</span>
+            </div>
+          </div>
+        </v-card>
+      </v-window-item>
+    </v-window>
+  </div>
+  <!--  <div class="testimonials float-left clear-both mb-[90px] h-auto w-full">
     <div class="cavani_tm_title float-left clear-both h-auto w-full overflow-hidden">
       <span
         class="relative inline-block font-poppins font-bold uppercase tracking-[8px] text-[#333]"
-        >Testimonials</span
       >
+        Testimonials
+      </span>
     </div>
     <div class="list float-left clear-both mt-[75px] h-auto w-full">
       <ul class="owl-carousel cursor-e-resize">
@@ -96,7 +131,7 @@ register()
         </li>
       </ul>
     </div>
-  </div>
+  </div>-->
 </template>
 
 <style scoped lang="css"></style>

@@ -7,7 +7,6 @@ defineProps<{ content: SectionEducationType }>()
 const getDate = (date: string | undefined) =>
   date &&
   new Intl.DateTimeFormat('en-US', {
-    month: 'short',
     year: 'numeric',
   }).format(new Date(date))
 </script>
@@ -19,16 +18,19 @@ const getDate = (date: string | undefined) =>
       <div
         v-for="item in content.list"
         :key="item._id"
-        class="edu-item relative flex justify-between"
+        class="edu-item relative flex justify-between items-start mb-4"
       >
-        <div v-if="item.startDate" class="w-48 shrink-0">
+        <div
+          v-if="item.startDate"
+          class="w-28 shrink-0 bg-black-tr rounded-2xl text-text-basic text-sm py-1 px-2 mx-4 text-center"
+        >
           {{ getDate(item.startDate) }} -
           {{ item.isCurrent ? 'present' : getDate(item.finishDate) }}
         </div>
         <div class="grow">
-          <div v-if="item.title">{{ item.title }}</div>
-          <div v-if="item.position">{{ item.position }}</div>
-          <div v-if="item.text">{{ item.text }}</div>
+          <div v-if="item.title" class="font-bold">{{ item.title }}</div>
+          <div v-if="item.position" class="text-text-basic my-1">{{ item.position }}</div>
+          <div v-if="item.text" class="text-text-basic italic">{{ item.text }}</div>
         </div>
       </div>
     </div>

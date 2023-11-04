@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
 import sanityImageBuilder from '~/api/sanity-image-builder'
-import GridVue from '~/components/layout/GridVue.vue'
 import { usePersonalDataStore } from '~/store'
 
 const { data } = usePersonalDataStore()
@@ -13,7 +12,7 @@ const name = computed(() => `${data?.firstName} ${data?.lastName}`)
     <HeaderMobile class="block 3xl:hidden" :content="data" />
     <HeaderDesktop class="hidden 3xl:flex" :content="data" />
     <main class="absolute inset-y-0 top-12 w-full overflow-hidden 3xl:inset-x-0 3xl:inset-y-16">
-      <GridVue is-wrapper classes="px-0 3xl:px-16">
+      <div class="mx-auto w-full h-full flex max-w-ultra-full-hd px-0 3xl:px-16">
         <div class="relative hidden w-photo shrink-0 3xl:block">
           <nuxt-img
             class="h-full w-full object-cover object-center"
@@ -27,7 +26,7 @@ const name = computed(() => `${data?.firstName} ${data?.lastName}`)
         <div class="grow overflow-auto bg-surface-board px-8 py-16 sm:px-24 sm:py-24">
           <slot />
         </div>
-      </GridVue>
+      </div>
     </main>
     <FooterVue :list="data.socialList" :name="name" />
   </div>
