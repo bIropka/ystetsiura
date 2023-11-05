@@ -1,17 +1,43 @@
 <script setup lang="ts">
-import { getWorksData } from '~/api/queries'
-import { CardProject, PageTitle } from '~/components/common'
+import { getProjectCategoriesData, getWorksData } from '~/api/queries'
+import { CardProject, SectionTitle } from '~/components/common'
 import CustomHead from '~/components/layout/CustomHead.vue'
 
+const activeCategory = ref<string | null>(null)
 const { data } = useAsyncData('projects-data', getWorksData)
+const { data: categories } = useAsyncData('project-categories', getProjectCategoriesData)
+const setActiveCategory = (id: string | null) => (activeCategory.value = id)
 </script>
 
 <template>
   <div v-if="data">
     <CustomHead :title="`${data.title} - ` ?? ''" />
-    <PageTitle :text="data.title" />
-    <div class="grid gap-6 sm:grid-cols-2">
-      <CardProject v-for="(p, i) in data.projects" :key="i + p.title" :project="p" />
+    <SectionTitle v-if="data.title" :title="data.title" />
+    <ul v-if="categories" class="flex mt-12 mb-8 flex-wrap">
+      <li
+        key="all"
+        class="capitalize mr-8 text-text-heading font-poppins font-semibold cursor-pointer my-1"
+        @click="setActiveCategory(null)"
+      >
+        all
+      </li>
+      <li
+        v-for="category in categories"
+        :key="category._id"
+        class="capitalize mr-8 text-text-heading font-poppins font-semibold cursor-pointer"
+        @click="setActiveCategory(category._id)"
+      >
+        {{ category.title }}
+      </li>
+    </ul>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <CardProject
+        v-for="(p, i) in data?.projects?.filter(
+          (p) => !activeCategory || !!p.category?.find((c) => c._id === activeCategory)
+        )"
+        :key="i + p.title"
+        :project="p"
+      />
     </div>
   </div>
 </template>

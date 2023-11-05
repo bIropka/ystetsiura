@@ -10,7 +10,7 @@ export type PerkType = {
   level?: string
   percents?: number
   exp?: number
-  _id?: string
+  _id: string
 }
 
 export type EduExpType = {

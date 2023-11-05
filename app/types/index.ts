@@ -51,6 +51,7 @@ export type CustomLinkType = {
 
 export type ProjectCategoryType = {
   title: string
+  _id: string
 }
 
 export type PostCategoryType = {
@@ -73,6 +74,7 @@ export type ProjectType = {
   perks?: PerkType[]
   role: string
   description: any[]
+  _id: string
 }
 
 export type PostType = {
