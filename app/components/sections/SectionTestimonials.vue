@@ -13,14 +13,14 @@ defineProps<{
     <SectionTitle v-if="content.title" :title="content.title" />
     <v-window v-if="content.list" :continuous="true" :touch="true" show-arrows="hover">
       <v-window-item v-for="item in content.list" :key="item._id">
-        <v-card class="!bg-transparent !flex justify-start items-start">
+        <v-card class="!bg-transparent lg:!flex justify-start items-start">
           <div
             v-if="item.text"
-            class="border border-black-tr py-6 px-8 text-text-basic mb-6 order-2 grow"
+            class="border border-black-tr py-2 px-3 lg:py-6 lg:px-8 text-text-basic mb-6 order-1 lg:order-2 grow"
           >
             {{ item.text }}
           </div>
-          <div class="shrink-0 flex items-center justify-start order-1">
+          <div class="shrink-0 flex items-center justify-start order-2 lg:order-1 mr-4">
             <div
               class="relative w-16 h-16 border border-black-tr rounded-full p-2 mr-4 bg-white overflow-hidden"
             >

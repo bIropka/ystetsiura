@@ -86,7 +86,7 @@ onMounted(() => {
             'font-poppins text-text-heading': type === 'mobile',
             'block px-8 py-2.5 font-poppins font-medium transition-all duration-300 hover:text-white':
               type === 'desktop',
-            'active default text-white': path === link.url && type === 'desktop',
+            'active default': path === link.url && type === 'desktop',
             underline: path === link.url && type === 'mobile',
           }"
           @mouseenter="itemHoverOn"
@@ -103,4 +103,8 @@ onMounted(() => {
   </nav>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+nav ul li a.active.default {
+  @apply text-white;
+}
+</style>

@@ -18,7 +18,7 @@ const getDate = (date: string | undefined) =>
       <div
         v-for="item in content.list"
         :key="item._id"
-        class="edu-item relative flex justify-between items-start mb-4"
+        class="edu-item relative sm:flex sm:justify-between sm:items-start mb-4"
       >
         <div
           v-if="item.startDate"
@@ -27,7 +27,7 @@ const getDate = (date: string | undefined) =>
           {{ getDate(item.startDate) }} -
           {{ item.isCurrent ? 'present' : getDate(item.finishDate) }}
         </div>
-        <div class="grow">
+        <div class="grow ml-4 mt-4 sm:ml-0 sm:mt-0">
           <div v-if="item.title" class="font-bold">{{ item.title }}</div>
           <div v-if="item.position" class="text-text-basic my-1">{{ item.position }}</div>
           <div v-if="item.text" class="text-text-basic italic">{{ item.text }}</div>

@@ -8,7 +8,7 @@ defineProps<{ content: SectionPerksType }>()
 <template>
   <div v-if="content">
     <SectionTitle v-if="content.title" :title="content.title" />
-    <div v-if="content.list" class="grid grid-cols-2 gap-x-8">
+    <div v-if="content.list" class="block sm:grid sm:grid-cols-2 sm:gap-x-8">
       <div v-for="item in content.list" :key="item._id" class="mb-6">
         <div class="mb-1 flex items-center justify-between text-text-basic">
           <span v-if="item.title">{{ item.title }}</span>

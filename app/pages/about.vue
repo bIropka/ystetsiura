@@ -18,16 +18,16 @@ const { data } = useAboutMePageStore()
   <div v-if="data">
     <CustomHead title="About Me" />
     <SectionTitle v-if="data.sectionAboutMe.title" :title="data.sectionAboutMe.title" />
-    <div class="grid grid-cols-2 mb-24 gap-x-16">
-      <SectionAboutMe :content="data.sectionAboutMe" />
+    <div class="block lg:grid lg:grid-cols-2 mb-24 lg:gap-x-16">
+      <SectionAboutMe :content="data.sectionAboutMe" class="mb-12 lg:mb-0" />
       <SectionAboutMeList :content="data.sectionAboutMeList" />
     </div>
-    <div class="grid grid-cols-2 mb-24 gap-x-16">
-      <SectionProgramming :content="data.sectionPerks" />
+    <div class="block lg:grid lg:grid-cols-2 mb-24 lg:gap-x-16">
+      <SectionProgramming :content="data.sectionPerks" class="mb-12 lg:mb-0" />
       <SectionLanguage :content="data.sectionLanguages" />
     </div>
-    <div class="grid grid-cols-2 mb-24 gap-x-16">
-      <SectionEducation :content="data.sectionEducation" />
+    <div class="block lg:grid lg:grid-cols-2 mb-24 lg:gap-x-16">
+      <SectionEducation :content="data.sectionEducation" class="mb-12 lg:mb-0" />
       <SectionEducation :content="data.sectionExperience" />
     </div>
     <SectionTestimonials :content="data.sectionTestimonials" />
