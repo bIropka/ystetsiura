@@ -1,5 +1,5 @@
 import { SanityImageSource } from '@sanity/image-url/lib/types/types'
-import { EduExpType, PerkType } from '~/types/common'
+import { PerkType } from '~/types/common'
 
 export type DecorProps = {
   left: number
@@ -37,11 +37,6 @@ export type PersonalDataType = {
   position: string[]
   socialList: SocialType[]
   navs: NavigationItemType[]
-}
-
-export type ClientType = {
-  title: string
-  image: SanityImageSource
 }
 
 export type CustomLinkType = {
@@ -86,13 +81,6 @@ export type PostType = {
   categories?: PostCategoryType[]
   publishedAt: string
   body: any[]
-}
-
-export type ResumeDataType = {
-  title: string
-  edu?: EduExpType[]
-  exp?: EduExpType[]
-  perks?: PerkType[]
 }
 
 export type WorksDataType = {

@@ -8,10 +8,10 @@ import {
 } from '~/components/sections'
 import SectionTitle from '~/components/common/SectionTitle.vue'
 import SectionEducation from '~/components/sections/SectionEducation.vue'
-import { useAboutMePageStore } from '~/store'
+import { useStore } from '~/store'
 import SectionTestimonials from '~/components/sections/SectionTestimonials.vue'
 
-const { data } = useAboutMePageStore()
+const { aboutMePage: data } = useStore()
 </script>
 
 <template>

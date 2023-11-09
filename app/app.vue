@@ -1,17 +1,8 @@
 <script setup lang="ts">
-import {
-  useAboutMePageStore,
-  useBlogPageStore,
-  usePersonalDataStore,
-  usePortfolioPageStore,
-  useServicesPageStore,
-} from '~/store'
+import { useStore } from '~/store'
 
-usePersonalDataStore()
-useAboutMePageStore()
-usePortfolioPageStore()
-useServicesPageStore()
-useBlogPageStore()
+const { init } = useStore()
+init()
 </script>
 
 <template>

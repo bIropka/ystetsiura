@@ -2,7 +2,6 @@ import sanityClient from '~/api/sanity-client'
 import { type AboutMeDataType } from '~/types/about-me'
 import {
   BlogDataType,
-  ResumeDataType,
   PersonalDataType,
   PostType,
   WorksDataType,
@@ -15,11 +14,6 @@ export const getPersonalData = async (): Promise<PersonalDataType> =>
 export const getAboutMeData = async (): Promise<AboutMeDataType> =>
   await sanityClient.fetch(
     `*[_type == "aboutMePage"][0]{..., sectionEducation{..., list[]->}, sectionExperience{..., list[]->}, sectionLanguages{..., list[]->}, sectionPerks{..., list[]->{..., perk->}}, sectionServices{..., list[]->}, sectionTestimonials{..., list[]->}}`
-  )
-
-export const getResumeData = async (): Promise<ResumeDataType> =>
-  await sanityClient.fetch(
-    `*[_type == "resume"][0]{..., edu[]->{..., perks[]->}, exp[]->{..., perks[]->}}`
   )
 
 export const getWorksData = async (): Promise<WorksDataType> =>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { getProjectCategoriesData, getWorksData } from '~/api/queries'
 import { CardProject, SectionTitle } from '~/components/common'
 import CustomHead from '~/components/layout/CustomHead.vue'
+import { useStore } from '~/store'
+
+const { portfolioPage: data, categories } = useStore()
 
 const activeCategory = ref<string | null>(null)
-const { data } = useAsyncData('projects-data', getWorksData)
-const { data: categories } = useAsyncData('project-categories', getProjectCategoriesData)
 const setActiveCategory = (id: string | null) => (activeCategory.value = id)
 </script>
 

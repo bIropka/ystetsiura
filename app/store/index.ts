@@ -1,33 +1,31 @@
 import { defineStore } from 'pinia'
 import {
   getAboutMeData,
-  getBlogData,
   getPersonalData,
-  getResumeData,
+  getProjectCategoriesData,
   getWorksData,
 } from '~/api/queries'
+import { PersonalDataType, PostCategoryType, WorksDataType } from '~/types'
+import { AboutMeDataType } from '~/types/about-me'
 
-export const usePersonalDataStore = defineStore('personalData', () => {
-  const { data } = useAsyncData('personal-data', getPersonalData)
-  return { data }
-})
+export const useStore = defineStore('pages', () => {
+  const personal = ref<PersonalDataType | null>(null)
+  const aboutMePage = ref<AboutMeDataType | null>(null)
+  const portfolioPage = ref<WorksDataType | null>(null)
+  const categories = ref<PostCategoryType[] | null>(null)
 
-export const useAboutMePageStore = defineStore('aboutMePage', () => {
-  const { data } = useAsyncData('about-me-data', getAboutMeData)
-  return { data }
-})
-
-export const usePortfolioPageStore = defineStore('portfolioPage', () => {
-  const { data } = useAsyncData('projects-data', getWorksData)
-  return { data }
-})
-
-export const useServicesPageStore = defineStore('servicesPage', () => {
-  const { data } = useAsyncData('resume-data', getResumeData)
-  return { data }
-})
-
-export const useBlogPageStore = defineStore('blogPage', () => {
-  const { data } = useAsyncData('blog-data', getBlogData)
-  return { data }
+  const init = () => {
+    const { data: personalData } = useAsyncData('personal-data', getPersonalData)
+    const { data: aboutMePageData } = useAsyncData('about-me-data', getAboutMeData)
+    const { data: portfolioPageData } = useAsyncData('projects-data', getWorksData)
+    const { data: categoriesData } = useAsyncData(
+      'project-categories-data',
+      getProjectCategoriesData
+    )
+    personal.value = personalData.value
+    aboutMePage.value = aboutMePageData.value
+    portfolioPage.value = portfolioPageData.value
+    categories.value = categoriesData.value
+  }
+  return { personal, aboutMePage, portfolioPage, categories, init }
 })

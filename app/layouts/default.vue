@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
 import sanityImageBuilder from '~/api/sanity-image-builder'
-import { usePersonalDataStore } from '~/store'
+import { useStore } from '~/store'
 
-const { data } = usePersonalDataStore()
+const { personal: data } = useStore()
 const name = computed(() => `${data?.firstName} ${data?.lastName}`)
 </script>
 

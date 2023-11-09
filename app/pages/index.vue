@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Typed, type TypedOptions } from '@duskmoon/vue3-typed-js'
 import CustomHead from '~/components/layout/CustomHead.vue'
-import { usePersonalDataStore } from '~/store'
+import { useStore } from '~/store'
 
-const { data } = usePersonalDataStore()
+const { personal: data } = useStore()
 
 const options = computed<TypedOptions>(() => ({
   strings: data?.position,
