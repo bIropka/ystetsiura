@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ['vuetify/lib/styles/main.sass', '~/assets/styles/main.css'],
+  css: ['~/assets/styles/main.css'],
   build: {
     transpile: ['vuetify'],
   },
@@ -17,5 +17,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity',
     'nuxt-swiper',
     '@nuxt/image',
+    '@pinia/nuxt',
   ],
 })

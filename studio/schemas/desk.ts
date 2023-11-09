@@ -13,11 +13,11 @@ const structure = (S: StructureBuilder) =>
           S.list()
             .id('pages')
             .items([
-              S.documentListItem().id('aboutMe').title('About Me').schemaType('aboutMe'),
-              S.documentListItem().id('resume').title('Resume').schemaType('resume'),
-              S.documentListItem().id('works').title('Works').schemaType('works'),
-              S.documentListItem().id('blog').title('Blog').schemaType('blog'),
-              S.documentListItem().id('contact').title('Contact').schemaType('contact'),
+              S.documentListItem().id('aboutMe').title('About Me').schemaType('aboutMePage'),
+              S.documentListItem().id('services').title('Services').schemaType('servicesPage'),
+              S.documentListItem().id('works').title('Portfolio').schemaType('portfolioPage'),
+              S.documentListItem().id('blog').title('Blog').schemaType('blogPage'),
+              S.documentListItem().id('contact').title('Contact').schemaType('contactPage'),
             ])
         ),
       S.divider(),

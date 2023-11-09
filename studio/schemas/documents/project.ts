@@ -12,13 +12,11 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Project start year',
@@ -27,7 +25,6 @@ export default defineType({
       options: {
         dateFormat: 'YYYY',
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       title: 'Project end year',
@@ -59,13 +56,11 @@ export default defineType({
       name: 'role',
       title: 'Role',
       type: 'string',
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'description',
       title: 'Description',
-      type: 'blockContent',
-      validation: (Rule) => Rule.required(),
+      type: 'blockContentObject',
     }),
   ],
   preview: {

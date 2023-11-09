@@ -25,7 +25,7 @@ defineProps({
       :placeholder="placeholder"
       :class="textareaClasses"
       :value="value"
-      class="block w-full leading-[56px] px-4 text-body bg-overlay rounded-3xl"
+      class="block w-full rounded-3xl bg-overlay px-4 leading-[56px] text-body"
     />
   </label>
 </template>

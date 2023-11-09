@@ -20,6 +20,11 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+    }),
+    defineField({
       name: 'author',
       title: 'Author',
       type: 'reference',
@@ -47,7 +52,7 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'blockContent',
+      type: 'blockContentObject',
     }),
   ],
 

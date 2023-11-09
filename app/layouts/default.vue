@@ -1,30 +1,34 @@
 <script setup lang="ts">
-import { HeaderVue, NavigationVue, ContentVue } from '~/components/layout'
-import { getPersonalData } from '~/api/queries'
+import { HeaderMobile, HeaderDesktop, FooterVue } from '~/components/layout'
 import sanityImageBuilder from '~/api/sanity-image-builder'
+import { useStore } from '~/store'
 
-const { data } = useAsyncData('personal-data', getPersonalData)
+const { personal: data } = useStore()
+const name = computed(() => `${data?.firstName} ${data?.lastName}`)
 </script>
 
 <template>
-  <div v-if="data" class="flex flex-col min-h-screen items-stretch">
-    <div v-if="data.headerImage" class="w-full h-[25vh]">
-      <nuxt-img
-        class="block w-full h-full object-cover"
-        :src="sanityImageBuilder(data.headerImage).width(1440).height(316).url()"
-        alt="Yegor Stetsiura personal website"
-        format="webp"
-        width="1440"
-        height="316"
-      />
-    </div>
-    <div class="grid grid-cols-6 w-full max-w-5xl mx-auto gap-8 grow grid-rows-default pb-8">
-      <HeaderVue :content="data" />
-      <NavigationVue />
-      <ContentVue>
-        <slot />
-      </ContentVue>
-    </div>
+  <div v-if="data" class="relative min-h-screen w-full min-w-[320px]">
+    <HeaderMobile class="block 3xl:hidden" :content="data" />
+    <HeaderDesktop class="hidden 3xl:flex" :content="data" />
+    <main class="absolute inset-y-0 top-12 w-full overflow-hidden 3xl:inset-x-0 3xl:inset-y-16">
+      <div class="mx-auto w-full h-full flex max-w-ultra-full-hd px-0 3xl:px-16">
+        <div class="relative hidden w-photo shrink-0 3xl:block">
+          <nuxt-img
+            class="h-full w-full object-cover object-center"
+            :src="sanityImageBuilder(data.image).width(960).height(1280).url()"
+            :alt="name"
+            format="webp"
+            width="960"
+            height="1280"
+          />
+        </div>
+        <div class="grow overflow-auto bg-surface-board px-8 py-16 sm:px-24 sm:py-24">
+          <slot />
+        </div>
+      </div>
+    </main>
+    <FooterVue :list="data.socialList" :name="name" />
   </div>
 </template>
 

@@ -6,13 +6,10 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'headerImage',
-      title: 'Header Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
-      validation: (Rule) => Rule.required(),
+      name: 'navs',
+      title: 'Navigation list',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'navigation' } }],
     }),
     defineField({
       name: 'image',
@@ -21,6 +18,21 @@ export default defineType({
       options: {
         hotspot: true,
       },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'imageSecond',
+      title: 'Photo Second',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'logoText',
+      title: 'logo Text',
+      type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -38,8 +50,8 @@ export default defineType({
     defineField({
       name: 'position',
       title: 'Position',
-      type: 'string',
-      validation: (Rule) => Rule.required(),
+      type: 'array',
+      of: [{ type: 'string' }],
     }),
     defineField({
       name: 'socialList',

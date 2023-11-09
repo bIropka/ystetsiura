@@ -1,9 +1,8 @@
 <script setup lang="ts">
-useHead({
-  bodyAttrs: {
-    class: 'bg-dark',
-  },
-})
+import { useStore } from '~/store'
+
+const { init } = useStore()
+init()
 </script>
 
 <template>

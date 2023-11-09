@@ -1,17 +1,25 @@
 <script setup lang="ts">
-import type { Component } from 'vue'
-
 defineProps<{
-  text: String
-  icon?: Component
+  title: string
 }>()
 </script>
 
 <template>
-  <div class="flex items-center mb-6">
-    <component :is="icon" v-if="icon" class="mr-3" />
-    <h3 class="font-pbold font-bold text-2xl text-heading">{{ text }}</h3>
+  <div class="wrapper">
+    <span v-if="title" class="text">
+      {{ title }}
+    </span>
   </div>
 </template>
 
-<style scoped lang="css"></style>
+<style scoped lang="css">
+.wrapper {
+  @apply mb-8 h-auto w-full overflow-hidden font-poppins font-bold uppercase text-text-heading;
+}
+.text {
+  @apply relative inline-block tracking-xxl;
+}
+.text:after {
+  @apply absolute left-full top-2/4 ml-8 h-0.5 w-[5000px] bg-text-basic content-[''];
+}
+</style>
