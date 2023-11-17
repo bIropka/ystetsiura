@@ -3,7 +3,6 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "nest": "cd server-app && start",
     "dev": "nuxt dev",
     "serve": "netlify serve --context dev",
     "generate": "nuxt generate",
