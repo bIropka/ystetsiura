@@ -17,7 +17,8 @@
   "workspaces": {
     "packages": [
       "app",
-      "studio"
+      "studio",
+      "dashboard"
     ],
     "nohoist": [
       "**/postcss",
