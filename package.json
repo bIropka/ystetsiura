@@ -18,7 +18,8 @@
     "packages": [
       "app",
       "studio",
-      "dashboard"
+      "dashboard",
+      "server-app"
     ],
     "nohoist": [
       "**/postcss",
